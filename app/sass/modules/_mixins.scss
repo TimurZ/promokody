@@ -1,0 +1,53 @@
+@mixin sprite($sprite-ico, $sprite: "%sprite") {
+	@extend #{$sprite};
+	@include sprite-position($sprite-ico);
+}
+
+@mixin respond-to($name) {
+	@if map-has-key($breakpoints, $name) {
+		@media screen and (min-width: map-get($breakpoints, $name)) {@content;}
+	} @else {
+		@warn "'#{$name}' not found";
+	}
+}
+
+@mixin retina($file: null, $width: null, $height: null, $ratio: 1.5) {
+	@media
+	(-webkit-min-device-pixel-ratio: $ratio),
+	(min-resolution: $ratio*96dpi) {
+		@if ($file) {
+			background-image: url(../images/#{$file});
+		}
+		@if ($width) {
+			background-size: $width $height;
+		}
+		@content;
+	}
+}
+
+// CLEARFIX
+@mixin clrf {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+// @mixin respond-to($name) {
+// 	// max-width
+// 	@if ($name == "tablets") {
+// 		@media only screen and (max-width: $tablets) {@content;}
+// 	} @else if ($name == "small-tablets") {
+// 		@media only screen and (max-width: $small-tablets) {@content;}
+// 	} @else if ($name == "mobile") {
+// 		@media only screen and (max-width: $mobile) {@content;}
+// 	// min-width
+// 	} @else if ($name == "small") {
+// 		@media only screen and (min-width: $small) {@content;}
+// 	} @else if ($name == "medium") {
+// 		@media only screen and (min-width: $medium) {@content;}
+// 	} @else if ($name == "large") {
+// 		@media only screen and (min-width: $large) {@content;}
+// 	}
+// }

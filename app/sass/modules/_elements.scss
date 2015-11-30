@@ -1,0 +1,212 @@
+// BUTTONS
+// ========
+.btn {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 5px;
+	font: 14px/1 $tahoma;
+	text-align: center;
+	color: #fff;
+	background: $green;
+	border: solid $green-darken;
+	border-width: 0 0 4px;
+	border-radius: 4px;
+
+	@include respond-to(desktop) {
+		transition: background .3s, border-color .3s;
+	}
+
+	&:hover {
+		background: $green-blue;
+		border-bottom-color: $green-blue-darken;
+	}
+}
+
+%button-reset {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+// mobile menu trigger common styles
+.menu-trigger {
+	@extend %button-reset;
+	width: 32px;
+	height: 32px;
+
+	&__svg {
+		display: block;
+		width: 28px;
+		height: 28px;
+		margin: 0 auto;
+
+		fill: $green;
+
+		@include respond-to(small) {
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+
+// FORMS
+// ======
+.txt {
+	width: 100%;
+	height: 39px;
+	padding: 0 10px 0 16px;
+	font: 14px/35px $tahoma;
+	line-height: 39px;
+	border: solid $light-gray;
+	border-width: 1px 1px 3px;
+	border-radius: 1px;
+	outline: none;
+
+	&::placeholder {
+		color: #bdc3c7;
+	}
+}
+
+// SPRITE/ICONS
+// =============
+.svg-defs {
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+%sprite {
+	background-color: #e8eaea;
+	background-image: url(../images/sprite.png);
+	background-repeat: no-repeat;
+
+	@include retina("sprite@2x.png", $spritesheet-width, $spritesheet-height);
+}
+
+.categories__ico {
+	&_clothes {
+		@include sprite($ico01);
+	}
+	&_house {
+		@include sprite($ico05);
+	}
+	&_sport {
+		@include sprite($ico09);
+	}
+	&_books {
+		@include sprite($ico13);
+	}
+	&_gifts {
+		@include sprite($ico17);
+	}
+	&_travelling {
+		@include sprite($ico02);
+	}
+	&_children {
+		@include sprite($ico06);
+	}
+	&_food {
+		@include sprite($ico10);
+	}
+	&_health {
+		@include sprite($ico14);
+	}
+	&_devices {
+		@include sprite($ico18);
+	}
+}
+
+.top-shops__item {
+	@include sprite($label);
+}
+
+.tiles__icons-item {
+	&_clothes {
+		@include sprite($ico01-m);
+	}
+	&_percent {
+		@include sprite($ico-percent-m);
+	}
+	&_food {
+		@include sprite($ico10-m);
+	}
+	&_money {
+		@include sprite($ico-money-m);
+	}
+	&_devices {
+		@include sprite($ico18-m);
+	}
+	&_delivery {
+		@include sprite($ico-delivery-m);
+	}
+	&_books {
+		@include sprite($ico13-m);
+	}
+	&_gift {
+		@include sprite($ico-gift-m);
+	}
+	&_sport {
+		@include sprite($ico09-m);
+	}
+	&_health {
+		@include sprite($ico14-m);
+	}
+	&_house {
+		@include sprite($ico05-m);
+	}
+	&_children {
+		@include sprite($ico06-m);
+	}
+	&_travelling {
+		@include sprite($ico02-m);
+	}
+}
+
+.post__ico {
+	&_devices {
+		@extend .tiles__icons-item_devices;
+	}
+}
+
+// ICO-TOOLTIPS
+// =============
+[data-tooltip] {
+	$width: 110px;
+	$bg-color: #fff;
+	$font-color: $gray;
+	position: relative;
+
+	&:hover {
+		&:after {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(-10px);
+			transition-delay: 0s;
+		}
+	}
+
+	&:after {
+		content: attr(data-tooltip);
+		width: $width;
+		margin-left: -$width/2;
+		padding: 5px;
+		font: 13px/1.4 $tahoma;
+		text-align: center;
+		text-transform: uppercase;
+		text-indent: 0;
+		background: $bg-color;
+		border: 1px dashed $green;
+
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		position: absolute;
+		left: 50%;
+		bottom: 95%;
+		z-index: 10;
+
+		transition: visibility 0s .3s, opacity .3s, transform .3s;
+	}
+}
