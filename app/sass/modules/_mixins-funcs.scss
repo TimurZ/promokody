@@ -1,0 +1,154 @@
+@mixin sprite($sprite-ico, $sprite: "%sprite") {
+	@extend #{$sprite};
+	@include sprite-position($sprite-ico);
+}
+
+// MIN-WIDTH
+@mixin respond-to($name) {
+	$max-width-bp: false !default;
+
+	@if map-has-key($breakpoints, $name) {
+		@if (not ($max-width-bp)) {
+			@media screen and (min-width: map-get($breakpoints, $name)) {@content;}
+		} @else {
+			@media screen and (max-width: map-get($breakpoints, $name)) {@content;}
+		}
+	} @else {
+		@warn "'#{$name}' not found";
+	}
+}
+
+@mixin retina($file: null, $width: null, $height: null, $ratio: 1.5) {
+	@media
+	(-webkit-min-device-pixel-ratio: $ratio),
+	(min-resolution: $ratio*96dpi) {
+		@if ($file) {
+			background-image: url(../images/#{$file});
+		}
+		@if ($width) {
+			background-size: $width $height;
+		}
+		@content;
+	}
+}
+
+// CLEARFIX
+@mixin clrf {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin justify {
+	font-size: 0;
+	line-height: 0;
+	text-justify: distribute; // IE
+	text-align: justify;
+
+	&:after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+@mixin vertical {
+	font-size: 0;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+}
+
+// @mixin respond-to($name) {
+// 	// max-width
+// 	@if ($name == "tablets") {
+// 		@media only screen and (max-width: $tablets) {@content;}
+// 	} @else if ($name == "small-tablets") {
+// 		@media only screen and (max-width: $small-tablets) {@content;}
+// 	} @else if ($name == "mobile") {
+// 		@media only screen and (max-width: $mobile) {@content;}
+// 	// min-width
+// 	} @else if ($name == "small") {
+// 		@media only screen and (min-width: $small) {@content;}
+// 	} @else if ($name == "medium") {
+// 		@media only screen and (min-width: $medium) {@content;}
+// 	} @else if ($name == "large") {
+// 		@media only screen and (min-width: $large) {@content;}
+// 	}
+// }
+
+//					 FUNCS
+// =============================================
+// removes  units
+@function strip-unit($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
+}
+
+@function calc-percentage($width, $container: $container, $percentage-change-width: null) {
+	@if ($percentage-change-width) {
+		@return strip-unit($width) * (1 + strip-unit($percentage-change-width)/100)/strip-unit($container)*100%;
+	}
+
+	@return percentage($width / $container);
+}
+
+// hsb to hsl
+// http://www.sitepoint.com/hsb-colors-with-sass/
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+	@if $b-hsb == 0 {
+		@return hsla(0, 0, 0, $a);
+	} @else {
+		$l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+		$s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+		@return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+	}
+}
+
+// long shadow
+// http://www.sitepoint.com/ultimate-long-shadow-sass-mixin/
+// http://codepen.io/SitePoint/pen/bNWXdQ
+// .foo {
+//   text-shadow: long-shadow(42deg, 1em, #16a085);
+// }
+// .bar {
+//   box-shadow: long-shadow(to top left, 150px, hotpink, tomato);
+// }
+@function long-shadow($direction, $length, $color, $fade: false, $shadow-count: 100) {
+	$shadows: ();
+	$conversion-map: (
+		to top: 180deg,
+		to top right: 135deg,
+		to right top: 135deg,
+		to right: 90deg,
+		to bottom right: 45deg,
+		to right bottom: 45deg,
+		to bottom: 0deg,
+		to bottom left: 315deg,
+		to left bottom: 315deg,
+		to left: 270deg,
+		to left top: 225deg,
+		to top left: 225deg
+	);
+
+	@if map-has-key($conversion-map, $direction) {
+		$direction: map-get($conversion-map, $direction);
+	}
+
+	@for $i from 1 through $shadow-count {
+		$current-step: ($i * $length / $shadow-count);
+		$current-color: if(not $fade, $color, if(type-of($fade) == 'color',  mix($fade, $color, ($i / $shadow-count * 100)), rgba($color, 1 - $i / $shadow-count)));
+
+		$shadows: append($shadows, (sin(0deg + $direction) * $current-step) (cos(0deg + $direction) * $current-step) 0 $current-color, 'comma');
+	}
+
+	@return $shadows;
+}

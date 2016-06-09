@@ -1,5 +1,13 @@
 // BUTTONS
 // ========
+%button-reset {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
 .btn {
 	display: inline-block;
 	vertical-align: top;
@@ -11,23 +19,12 @@
 	border: solid $green-darken;
 	border-width: 0 0 4px;
 	border-radius: 4px;
-
-	@include respond-to(desktop) {
-		transition: background .3s, border-color .3s;
-	}
+	transition: background .3s, border-color .3s;
 
 	&:hover {
 		background: $green-blue;
 		border-bottom-color: $green-blue-darken;
 	}
-}
-
-%button-reset {
-	padding: 0;
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	outline: none;
 }
 
 // mobile menu trigger common styles
@@ -36,36 +33,23 @@
 	width: 32px;
 	height: 32px;
 
+	&:hover {
+		.menu-trigger__svg {
+			fill: $green-blue;
+		}
+	}
+
 	&__svg {
 		display: block;
-		width: 28px;
-		height: 28px;
-		margin: 0 auto;
+		width: 100%;
+		height: 100%;
+		padding: 2px;
 
 		fill: $green;
 
-		@include respond-to(small) {
-			width: 32px;
-			height: 32px;
+		@include respond-to(medium) {
+			padding: 0;
 		}
-	}
-}
-
-// FORMS
-// ======
-.txt {
-	width: 100%;
-	height: 39px;
-	padding: 0 10px 0 16px;
-	font: 14px/35px $tahoma;
-	line-height: 39px;
-	border: solid $light-gray;
-	border-width: 1px 1px 3px;
-	border-radius: 1px;
-	outline: none;
-
-	&::placeholder {
-		color: #bdc3c7;
 	}
 }
 
@@ -170,6 +154,124 @@
 	}
 }
 
+// SOCIAL ICONS
+// =============
+.social {
+	$svg-size: 30px; // without border
+	$svg-size-small: 22px; // without border
+	$border: 1px;
+	$ico-color: $green;
+	$ico-color-hover: #fff;
+	$shadow-color: #eef0f0;
+	$shadow-color-hover: $green-blue-darken;
+	$bg-color-hover: $green-blue;
+
+	@include clrf;
+
+	&_small {
+		.social__item {
+			margin-left: 3px;
+		}
+
+		.social__svg {
+			width: $svg-size-small;
+			height: $svg-size-small;
+		}
+	}
+
+	&__item {
+		&:not(:first-child) {
+			margin-left: 4px;
+		}
+
+		float: left;
+		border: $border solid $green;
+		border-radius: 2px;
+		overflow: hidden;
+	}
+
+	&__link {
+		display: block;
+
+		@include respond-to(xlarge) {
+			transition: background .3s;
+		}
+
+		&:hover {
+			background: $bg-color-hover;
+
+			.social__svg {
+				fill: $ico-color-hover;
+				color: $shadow-color-hover; // shadow
+			}
+		}
+	}
+
+	&__svg {
+		display: block;
+		width: $svg-size;
+		height: $svg-size;
+
+		fill: $ico-color;
+		color: $shadow-color; // shadow
+
+		@include respond-to(xlarge) {
+			transition: fill .3s, color .3s;
+		}
+	}
+}
+
+// RATING
+// =======
+.rating {
+	&__text {
+		display: none;
+
+		@include respond-to(small) {
+			display: inline-block;
+			vertical-align: middle;
+			font: 16px/1 $gloria;
+			color: $gray;
+			margin-right: 4px;
+		}
+		@include respond-to(large) {
+			vertical-align: top;
+		}
+	}
+
+	&__list {
+		display: inline-block;
+		vertical-align: middle;
+
+		@include respond-to(large) {
+			vertical-align: top;
+		}
+
+		&-item {
+			&:not(:first-child) {
+				margin-right: 2px;
+			}
+
+			float: right;
+			width: 15px;
+			height: 14px;
+			text-indent: -9999px;
+			overflow: hidden;
+			background-color: transparent;
+			cursor: pointer;
+			@include sprite($star-empty);
+
+			&:hover,
+			&:hover ~ &,
+			&.active,
+			&.active ~ & {
+				@include sprite-position($star-full);
+			}
+		}
+
+	}
+}
+
 // ICO-TOOLTIPS
 // =============
 [data-tooltip] {
@@ -208,5 +310,36 @@
 		z-index: 10;
 
 		transition: visibility 0s .3s, opacity .3s, transform .3s;
+	}
+}
+
+// RIPPLES
+// ========
+.ripple {
+	overflow: hidden;
+	position: relative;
+}
+
+.ripple-effect {
+	position: absolute;
+	border-radius: 50%;
+	background: #fff;
+	opacity: 0.3;
+	pointer-events: none;
+
+	transition: opacity .4s ease-in;
+	animation: ripple-animation .4s ease-out forwards;
+}
+
+.ripple-effect-out {
+	opacity: 0;
+}
+
+@keyframes ripple-animation {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
 	}
 }

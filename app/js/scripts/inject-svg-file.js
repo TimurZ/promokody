@@ -1,5 +1,5 @@
 // ajax for the svg sprite and inject it onto the page
-(function() {
+;(function() {
 	var params = {
 		sprite: "images/svg_defs.svg",
 		cls: "svg-defs"

@@ -1,0 +1,75 @@
+// FORMS
+// ======
+input,
+select,
+textarea {
+	display: block;
+	width: 100%;
+}
+
+.txt {
+	height: 39px;
+	padding: 0 10px 0 16px;
+	font: 14px/35px $tahoma;
+	line-height: 39px;
+	border: solid $light-gray;
+	border-width: 1px 1px 3px;
+	border-radius: 1px;
+	outline: none;
+
+	&::placeholder {
+		color: #bdc3c7;
+	}
+}
+
+.subscribe-form {
+	padding: 5px 0 5px;
+
+	@include respond-to(medium) {
+		padding: 10px;
+	}
+	@include respond-to(large) {
+		padding: 10px 16px 16px 17px;
+	}
+
+	&_smaller {
+		@include respond-to(large) {
+			padding-right: 27px;
+			padding-left: 26px;
+		}
+	}
+
+	&__input {
+		margin-bottom: 5px;
+		text-align: center;
+	}
+
+	&__submit {
+		width: 100%;
+		height: 38px;
+		line-height: 38px;
+		text-indent: -9px;
+		background: $green-blue;
+		border-radius: 0;
+		border-bottom-color: $green-blue-darken;
+		outline: none;
+		cursor: pointer;
+		position: relative;
+
+		&:hover {
+			background: $green;
+			border-bottom-color: $green-darken;
+		}
+
+		&:after {
+			content: "";
+			width: 100%;
+			border: solid #dfe3e3;
+			border-width: 1px 1px 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: -4px;
+		}
+	}
+}

@@ -12,6 +12,7 @@ $green: #1abc9c; // main graeen color
 $green-darken: #17a88c; // green darken borders
 $green-blue: #07939e; // nav, social icons hover bg color. green-blue = turquoise? hard to write)
 $green-blue-darken: #05757e; // post heading, nav hover bottom border, social hover shadow
+
 $color-bd-dashed: #e3e8e8; // dashed border color, posts-meta border color
 $color-bd-box: #e6e7e8;
 
@@ -25,22 +26,32 @@ $blue: #55c5d1;
 $bg-body: #f7f8f8;
 $bg-box: #eff0f0; // aside gray block
 
-// WRAPPER
-$wrap: 1000px;
+// CONTAINER WIDTH
+$container: 1000px;
 
 // SUSY GRID
 $susy: (
 	columns: 12,
-	container: $wrap,
+	container: $container,
 	gutters: 20px/65px,
 	gutter-position: after, // default
 	global-box-sizing: border-box
 );
 
 // RESPONSIVE BREAKPOINTS
+// MIN-WIDTH
 $breakpoints: (
 	small: 500px,
 	medium: 767px,
-	large: $wrap + 25px,
-	desktop: 1280px
+	large: $container + 25px,
+	xlarge: 1281px
 );
+
+// MAX-WIDTH
+// $max-width-bp: true;
+// $breakpoints: (
+// 	big-tablets: ,
+// 	tablets: ,
+// 	small-tablets: ,
+// 	mobile: 
+// );

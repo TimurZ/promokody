@@ -39,9 +39,17 @@ table {
 }
 
 // remove extra space in firefox
-button { 
-	&::-moz-focus-inner {
-		border: 0;
-		padding: 0;
-	}
+button::-moz-focus-inner,  
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: none;
+	padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
 }

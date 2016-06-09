@@ -25,11 +25,23 @@ a {
 	}
 }
 
-%holder {
+.container {
 	margin: 0 10px;
+	@include clrf;
 
 	@include respond-to(large) {
-		max-width: $wrap;
+		max-width: $container;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+%holder {
+	margin: 0 10px;
+	@include clrf;
+
+	@include respond-to(large) {
+		max-width: $container;
 		margin-right: auto;
 		margin-left: auto;
 	}
@@ -73,73 +85,6 @@ a {
 	transition-delay: 0s;
 }
 
-// social icons
-.social {
-	$svg-size: 30px; // without border
-	$svg-size-small: 22px; // without border
-	$border: 1px;
-	$ico-color: $green;
-	$ico-color-hover: #fff;
-	$shadow-color: #eef0f0;
-	$shadow-color-hover: $green-blue-darken;
-	$bg-color-hover: $green-blue;
-
-	@include clrf;
-
-	&_small {
-		.social__item {
-			margin-left: 3px;
-		}
-
-		.social__svg {
-			width: $svg-size-small;
-			height: $svg-size-small;
-		}
-	}
-
-	&__item {
-		&:first-child {
-			margin-left: 0;
-		}
-
-		float: left;
-		margin-left: 4px;
-		border: $border solid $green;
-		border-radius: 2px;
-		overflow: hidden;
-	}
-
-	&__link {
-		display: block;
-
-		@include respond-to(desktop) {
-			transition: background .3s;
-		}
-
-		&:hover {
-			background: $bg-color-hover;
-
-			.social__svg {
-				fill: $ico-color-hover;
-				color: $shadow-color-hover; // shadow
-			}
-		}
-	}
-
-	&__svg {
-		display: block;
-		width: $svg-size;
-		height: $svg-size;
-
-		fill: $ico-color;
-		color: $shadow-color; // shadow
-
-		@include respond-to(desktop) {
-			transition: fill .3s, color .3s;
-		}
-	}
-}
-
 .logo {
 	display: block;
 	width: 186px;
@@ -166,60 +111,11 @@ a {
 	}
 }
 
-.rating {
-	&__text {
-		display: none;
-
-		@include respond-to(small) {
-			display: inline-block;
-			vertical-align: middle;
-			font: 16px/1 $gloria;
-			color: $gray;
-			margin-right: 4px;
-		}
-		@include respond-to(large) {
-			vertical-align: top;
-		}
-	}
-
-	&__list {
-		display: inline-block;
-		vertical-align: middle;
-
-		@include respond-to(large) {
-			vertical-align: top;
-		}
-
-		&-item {
-			&:first-child {
-				margin-right: 0;
-			}
-
-			float: right;
-			margin-right: 2px;
-			width: 15px;
-			height: 14px;
-			text-indent: -9999px;
-			overflow: hidden;
-			background-color: transparent;
-			cursor: pointer;
-			@include sprite($star-empty);
-
-			&:hover,
-			&:hover ~ &,
-			&.active,
-			&.active ~ & {
-				@include sprite-position($star-full);
-			}
-		}
-	}
-}
-
 // ---------------------------------------------
 //					 HEADER
 // =============================================
 .site-header {
-	@extend %holder;
+	// @extend %holder;
 	padding: 15px 0;
 
 	@include respond-to(small) {
@@ -233,7 +129,7 @@ a {
 		text-align: center;
 		@include clrf;
 
-		@include respond-to(desktop) {
+		@include respond-to(xlarge) {
 			margin-bottom: 29px;
 		}
 	}
@@ -272,7 +168,7 @@ a {
 	&__menu-trigger {
 		float: right;
 
-		@include respond-to(desktop) {
+		@include respond-to(xlarge) {
 			display: none;
 		}
 	}
@@ -281,7 +177,7 @@ a {
 		position: relative;
 		display: none;
 
-		@include respond-to(desktop) {
+		@include respond-to(xlarge) {
 			display: block;
 			float: right;
 			width: 262px;
@@ -326,11 +222,10 @@ a {
 .main-nav {
 	$anim-duration: .3s;
 	$link-bd-b: 4px; // the same as %links-bar border-bottom
+	@extend %links-bar-styles;
 	display: none;
 
-	@include respond-to(desktop) {
-		@extend %links-bar-styles;
-
+	@include respond-to(xlarge) {
 		display: block;
 		font: 18px/1.2 $tahoma;
 		padding: 0 6px 0 21px;
@@ -351,7 +246,7 @@ a {
 			&_drop {
 				position: relative;
 
-				// desktop triangle && shadow
+				// xlarge triangle && shadow
 				&:hover {
 					> .main-nav__link {
 						background: $green-blue;
@@ -461,13 +356,13 @@ a {
 		width: 300px;
 		right: -300px;
 	}
-	@include respond-to(desktop) {
+	@include respond-to(xlarge) {
 		display: none;
 	}
 
 	&__container {
 		min-height: 100%;
-		padding: 0 0 57px;
+		padding: 0 0 72px;
 
 		@include respond-to(small) {
 			padding-bottom: 20px;
@@ -555,6 +450,7 @@ a {
 	}
 
 	&__drop-list {
+		padding: 5px 0;
 		color: #fff;
 		background: darken($green, 10%);
 		display: none;
@@ -568,7 +464,7 @@ a {
 		font-size: 0;
 		text-align: center;
 		width: 100%;
-		margin-top: -37px; // from bottom. ico height + 5px
+		margin-top: -42px; // from bottom. ico height + 5px
 
 		@include respond-to(small) {
 			display: none;
@@ -647,7 +543,7 @@ a {
 // =============================================
 // wrap for categories and aside blocks on main page
 .two-cols {
-	@extend %holder;
+	// @extend %holder;
 
 	@include respond-to(medium) {
 		@include clrf;
@@ -739,7 +635,7 @@ a {
 		@include respond-to(large) {
 			padding: 8px 40px 8px 29px;
 		}
-		@include respond-to(desktop) {
+		@include respond-to(xlarge) {
 			transition: background .3s;
 		}
 
@@ -809,68 +705,58 @@ a {
 }
 
 .box {
-	$dots: true;
 	$dots-size: 5px;
 	$bd-w: 2px;
+	$dots-position: ($dots-size + $bd-w)/2;
 
 	// original:
 	// <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#45c8dc" /></svg>
 
 	font-family: $tahoma;
 	line-height: 1.2;
+	text-align: center;
 
 	@include respond-to(medium) {
 		border: $bd-w solid $color-bd-box;
+		position: relative;
 
-		@if ($dots) {
-			position: relative;
+		&:before,
+		&:after {
+			content: "";
+			width: $dots-size;
+			// base64 for IE
+			background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzQ1YzhkYyIgLz48L3N2Zz4='),
+									url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzQ1YzhkYyIgLz48L3N2Zz4=');
+			background-size: $dots-size $dots-size;
+			background-repeat: no-repeat;
+			background-position: 0 0, 0 100%;
 
-			&:before,
-			&:after {
-				content: "";
-				width: $dots-size;
-				// base64 used for IE
-				background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzQ1YzhkYyIgLz48L3N2Zz4='),
-										url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzQ1YzhkYyIgLz48L3N2Zz4=');
-				background-size: $dots-size $dots-size;
-				background-repeat: no-repeat;
-				background-position: 0 0, 0 100%;
-
-				position: absolute;
-				top: -($dots-size/2 + $bd-w)/2;
-				bottom: -($dots-size + $bd-w)/2;
-			}
-			&:before {
-				left: -($dots-size + $bd-w)/2;
-			}
-			&:after {
-				right: -($dots-size + $bd-w)/2;
-			}
+			position: absolute;
+			top: -$dots-position;
+			bottom: -$dots-position;
+		}
+		&:before {
+			left: -$dots-position;
+		}
+		&:after {
+			right: -$dots-position;
 		}
 	}
 
 	&__title {
-		display: block;
-		width: 169px;
-		margin: 0 auto 3px;
+		display: inline-block;
+		vertical-align: top;
+		min-width: 170px;
+		max-width: 90%;
+		margin-bottom: 10px;
 		font-size: 20px;
 		color: $medium-blue;
 		text-align: center;
 		word-spacing: -1px;
 
 		@include respond-to(medium) {
-			margin-top: -13px;
+			margin: -13px 0 3px;
 			background: $bg-box;
-			max-width: 265px;
-		}
-		@include respond-to(large) {
-			transform: translateX(7px);
-		}
-
-		&_shift {
-			@include respond-to(large) {
-				transform: translateX(11px);
-			}
 		}
 	}
 
@@ -878,58 +764,6 @@ a {
 		display: block;
 		font-size: 13px;
 		color: $green;
-	}
-}
-
-.subscribe-form {
-	padding: 5px 0 5px;
-
-	@include respond-to(medium) {
-		padding: 10px;
-	}
-	@include respond-to(large) {
-		padding: 10px 16px 16px 17px;
-	}
-
-	&_smaller {
-		@include respond-to(large) {
-			padding-right: 27px;
-			padding-left: 26px;
-		}
-	}
-
-	&__input {
-		margin-bottom: 5px;
-		text-align: center;
-	}
-
-	&__submit {
-		width: 100%;
-		height: 38px;
-		line-height: 38px;
-		text-indent: -9px;
-		background: $green-blue;
-		border-radius: 0;
-		border-bottom-color: $green-blue-darken;
-		outline: none;
-		cursor: pointer;
-		position: relative;
-
-		&:hover {
-			background: $green;
-			border-bottom-color: $green-darken;
-		}
-
-		&:after {
-			content: "";
-			width: 100%;
-			border: solid #dfe3e3;
-			border-width: 1px 1px 0;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: -4px;
-		}
 	}
 }
 
@@ -984,7 +818,7 @@ a {
 			vertical-align: middle;
 		}
 
-		@include respond-to(desktop) {
+		@include respond-to(xlarge) {
 			position: relative;
 			padding-left: 27px;
 
@@ -1016,14 +850,14 @@ a {
 
 // just separ)
 .separ {
-	height: 0;
-	margin: 0 0 21px;
-	border: solid $light-gray; // хорошее название)
-	border-width: 0 0 2px;
 	display: none;
 
 	@include respond-to(large) {
 		display: block;
+		height: 0;
+		margin: 0 0 21px;
+		border: solid $light-gray;
+		border-width: 0 0 2px;
 	}
 }
 
@@ -1044,7 +878,7 @@ a {
 	// 	font-size: 0;
 	// 	line-height: 0;
 	// 	text-align: justify;
-	// 	text-justify: distribute; // IE. even IE11
+	// 	text-justify: distribute; // IE
 
 	// 	&:after {
 	// 		content: "";
@@ -1091,7 +925,7 @@ a {
 		.tiles__btn {
 			@include respond-to(medium) {
 				width: calc-percentage(187px, 343px);
-				margin-left: calc-percentage(3px, 343px);
+				margin-left: 3px;
 				margin-top: 0;
 			}
 			@include respond-to(large) {
@@ -1110,7 +944,6 @@ a {
 		@include respond-to(small) {
 			@include gallery(6);
 		}
-
 		@include respond-to(medium) {
 			@include gallery(4 of 8);
 			margin-bottom: 20px;
@@ -1147,7 +980,7 @@ a {
 		}
 
 		// anim border on a.img-wrap hover
-		@include respond-to(desktop) {
+		@include respond-to(xlarge) {
 			&:hover:after {
 				opacity: 1;
 				transform: scale(1);
@@ -1209,14 +1042,16 @@ a {
 	}
 
 	&__btn {
+		@extend %button-reset;
 		width: 100%;
 		height: 48px;
 		margin-top: 5px;
 		padding: 0 5px;
 		line-height: 48px;
 		font-size: 13px;
-		outline: none;
-		cursor: pointer;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 
 		@include respond-to(large) {
 			width: auto;
@@ -1260,7 +1095,7 @@ a {
 						background: hsb(206, 57, 73);
 					}
 					&.-ok {
-						background: hsb(50, 80, 95);;
+						background: hsb(50, 80, 95);
 					}
 				}
 
@@ -1416,12 +1251,10 @@ a {
 	}
 }
 
-// what the heck is promocodes? =)
 .what-promo {
-	padding: 0 2px;
+	margin-bottom: 30px;
 	font: 14px/1.2 $tahoma;
 	color: #879299;
-	margin-bottom: 30px;
 
 	@include respond-to(large) {
 		margin-bottom: 42px;
@@ -1454,6 +1287,7 @@ a {
 		margin-bottom: -10px;
 		overflow: hidden;
 		font-size: 12px;
+		text-align: left;
 
 		@include respond-to(medium) {
 			padding: 16px 8px 10px 26px;
@@ -1487,7 +1321,7 @@ a {
 		border-radius: 3px;
 		box-shadow: 0 2px 0 #e1e4e4;
 
-		@include respond-to(desktop) {
+		@include respond-to(xlarge) {
 			transition: box-shadow .3s;
 		}
 
@@ -1521,18 +1355,16 @@ a {
 
 .bottom-bar {
 	@extend %links-bar-styles;
-	margin-bottom: 30px;
+	margin-top: 20px;
+	padding: 3px 0 4px;
 	font: 15px/1 $tahoma;
 	text-align: center;
 
 	@include respond-to(large) {
-		margin-bottom: 36px;
+		margin-top: 42px;
 	}
 
 	&__links-wrap {
-		@extend %holder;
-		padding: 3px 0 4px;
-
 		@include respond-to(large) {
 			padding-left: 10px;
 			overflow: hidden;
@@ -1556,22 +1388,20 @@ a {
 }
 
 .site-footer {
-	@extend %holder;
-
+	padding: 30px 0 15px;
 	text-align: center;
-	margin-bottom: 10px;
 	overflow: hidden;
 
 	@include respond-to(medium) {
 		text-align: left;
 	}
 	@include respond-to(large) {
-		margin-bottom: 32px;
+		padding: 36px 0 36px;
 	}
 
 	&__left,
 	&__center {
-		margin-bottom: gutter();
+		margin-bottom: 15px;
 
 		@include respond-to(medium) {
 			margin-bottom: 0;
@@ -1905,7 +1735,12 @@ a {
 
 	transition: opacity .3s;
 	will-change: opacity;
+
+	@include respond-to(xlarge) {
+		display: none;
+	}
 }
+
 // ---------------------------------------------
 //					 MOBILE ACTIVE
 // =============================================
