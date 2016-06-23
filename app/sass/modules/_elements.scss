@@ -19,11 +19,14 @@
 	border: solid $green-darken;
 	border-width: 0 0 4px;
 	border-radius: 4px;
-	transition: background .3s, border-color .3s;
 
 	&:hover {
 		background: $green-blue;
 		border-bottom-color: $green-blue-darken;
+	}
+
+	@include respond-to(xlarge) {
+		transition: background .3s, border-color .3s;
 	}
 }
 
@@ -99,6 +102,12 @@
 	}
 	&_devices {
 		@include sprite($ico18);
+	}
+}
+
+.main-nav__item_ico {
+	.main-nav__link:before {
+		@include sprite($ico-question);
 	}
 }
 
@@ -221,6 +230,75 @@
 	}
 }
 
+.tiles-social {
+	display: none;
+
+	@include respond-to(large) {
+		display: block;
+		margin-top: -3px;
+		padding: 12px 0 13px;
+		font-size: 0;
+		line-height: 1;
+		text-align: center;
+		border-top: 1px dashed $medium-gray;
+
+		&__item {
+			&:first-child {
+				margin-left: 13px;
+			}
+
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 3px;
+			border-radius: 50%;
+
+			transition: background .3s;
+
+			&:hover {
+				&.-facebook {
+					background: hsb(221, 57, 73);
+				}
+				&.-twitter {
+					background: hsb(200, 71, 100);
+				}
+				&.-vk {
+					background: hsb(206, 57, 73);
+				}
+				&.-ok {
+					background: hsb(50, 80, 95);
+				}
+			}
+
+			&.-facebook {
+				background: hsb(221, 37, 73);
+			}
+			&.-twitter {
+				background: hsb(200, 51, 100);
+			}
+			&.-vk {
+				background: hsb(206, 27, 73);
+			}
+			&.-ok {
+				background: hsb(48, 100, 98);
+			}
+		}
+
+		&__link {
+			display: block;
+			width: 18px;
+			height: 18px;
+			padding: 4px;
+		}
+
+		&__svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			fill: #fff;
+		}
+	}
+}
+
 // RATING
 // =======
 .rating {
@@ -276,15 +354,14 @@
 // =============
 [data-tooltip] {
 	$width: 110px;
-	$bg-color: #fff;
-	$font-color: $gray;
+	color: $gray;
 	position: relative;
 
 	&:hover {
 		&:after {
 			opacity: 1;
 			visibility: visible;
-			transform: translateY(-10px);
+			transform: scaleX(1) translateY(-17px);
 			transition-delay: 0s;
 		}
 	}
@@ -298,17 +375,18 @@
 		text-align: center;
 		text-transform: uppercase;
 		text-indent: 0;
-		background: $bg-color;
+		background: #fff;
 		border: 1px dashed $green;
 
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
 		position: absolute;
 		left: 50%;
-		bottom: 95%;
-		z-index: 10;
+		bottom: 85%;
+		opacity: 0;
+		z-index: 15;
+		visibility: hidden;
+		pointer-events: none;
 
+		transform: scaleX(0.4);
 		transition: visibility 0s .3s, opacity .3s, transform .3s;
 	}
 }
@@ -323,19 +401,19 @@
 .ripple-effect {
 	position: absolute;
 	border-radius: 50%;
-	background: #fff;
-	opacity: 0.3;
+	background: $ripple-color;
+	opacity: $ripple-opacity;
 	pointer-events: none;
 
-	transition: opacity .4s ease-in;
-	animation: ripple-animation .4s ease-out forwards;
+	transition: opacity $ripple-duration ease-in;
+	animation: scale-in $ripple-duration ease-out forwards;
 }
 
 .ripple-effect-out {
 	opacity: 0;
 }
 
-@keyframes ripple-animation {
+@keyframes scale-in {
 	0% {
 		transform: scale(0);
 	}

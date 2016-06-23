@@ -11,6 +11,7 @@ body {
 	color: $gray;
 	min-width: 320px;
 	background: $bg-body;
+	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-tap-highlight-color: transparent;
@@ -34,23 +35,6 @@ a {
 		margin-right: auto;
 		margin-left: auto;
 	}
-}
-
-%holder {
-	margin: 0 10px;
-	@include clrf;
-
-	@include respond-to(large) {
-		max-width: $container;
-		margin-right: auto;
-		margin-left: auto;
-	}
-}
-
-%heading {
-	font: 21px/1.2 $gloria;
-	word-spacing: 1px;
-	margin-bottom: 10px;
 }
 
 %links-bar-styles {
@@ -95,27 +79,19 @@ a {
 		height: 100%;
 		text-indent: -9999px;
 		overflow: hidden;
-		background: url(../images/logo.png) no-repeat;
-
-		@include retina("logo@2x.png", cover);
+		background: url(../images/logo.svg) no-repeat;
 	}
 }
 
-.width-wrapper {
-	@extend %holder;
-	@include clrf;
-	margin-bottom: 30px;
-
-	@include respond-to(large) {
-		margin-bottom: 42px;
-	}
+.ttl {
+	font: 21px/1.2 $gloria;
+	word-spacing: 1px;
+	margin-bottom: 10px;
 }
 
-// ---------------------------------------------
-//					 HEADER
-// =============================================
+// 		HEADER
+// ==============================
 .site-header {
-	// @extend %holder;
 	padding: 15px 0;
 
 	@include respond-to(small) {
@@ -173,8 +149,7 @@ a {
 		}
 	}
 
-	&__search {
-		position: relative;
+	&__search-form {
 		display: none;
 
 		@include respond-to(xlarge) {
@@ -183,45 +158,14 @@ a {
 			width: 262px;
 			margin-top: -4px;
 		}
-
-		&-input {
-			padding-right: 45px;
-		}
-
-		&-btn {
-			@extend %button-reset;
-			width: 37px;
-			height: 37px;
-			background: $green;
-
-			position: absolute;
-			top: 1px;
-			right: 1px;
-
-			transition: background .3s;
-
-			&:hover {
-				background: $green-blue;
-			}
-		}
-
-		&-svg {
-			display: block;
-			width: 14px;
-			height: 15px;
-			margin: 0 auto;
-
-			fill: #fff;
-		}
 	}
 }
 
-// ---------------------------------------------
-//					 NAVIGATION
-// =============================================
+// 		NAVIGATION
+// ==============================
 .main-nav {
 	$anim-duration: .3s;
-	$link-bd-b: 4px; // the same as %links-bar border-bottom
+	$link-bd-b: 4px;
 	@extend %links-bar-styles;
 	display: none;
 
@@ -246,11 +190,10 @@ a {
 			&_drop {
 				position: relative;
 
-				// xlarge triangle && shadow
 				&:hover {
-					> .main-nav__link {
+					>.main-nav__link {
 						background: $green-blue;
-						border-bottom-color: darken($green-blue, 6%);
+						border-bottom-color: $green-blue-darken;
 
 						&:before,
 						&:after {
@@ -258,7 +201,7 @@ a {
 						}
 					}
 
-					> .main-nav__drop-list {
+					>.main-nav__drop-list {
 						visibility: visible;
 						opacity: 1;
 						transition-delay: 0s;
@@ -266,12 +209,11 @@ a {
 				}
 
 				// triangle for top level link
-				> .main-nav__link {
-					$trl-w: 5px;
+				>.main-nav__link {
+					$trl-w: 6px;
 					$trl-h: 3px;
 					$pos-t: 27px;
 					$pos-r: 25px;
-
 					padding-right: 35px;
 					position: relative;
 
@@ -287,10 +229,11 @@ a {
 						position: absolute;
 						top: $pos-t;
 						right: $pos-r;
+						transition: transform $anim-duration;
 					}
 					// triangle shadow
 					&:before {
-						top: $pos-t + 1;
+						top: $pos-t + 1px;
 						border-top-color: $green-blue-darken;
 					}
 				}
@@ -301,7 +244,21 @@ a {
 				float: right;
 			}
 
-
+			&_ico {
+				.main-nav__link {
+					&:before {
+						content: "";
+						display: inline-block;
+						vertical-align: middle;
+						width: 32px;
+						height: 32px;
+						margin: -18px 12px -16px 0;
+						border-radius: 2px;
+						overflow: hidden;
+						box-shadow: 1px 1px 0 #8ac6b0;
+					}
+				}
+			}
 		}
 
 		&__link {
@@ -313,8 +270,8 @@ a {
 
 			&:hover {
 				text-decoration: none;
-				border-bottom-color: $green-blue-darken;
 				background: $green-blue;
+				border-bottom-color: $green-blue-darken;
 			}
 		}
 
@@ -331,7 +288,7 @@ a {
 			left: 0;
 			z-index: 10;
 
-			// remove bottom border && negative margin
+			// remove bottom border
 			.main-nav__link {
 				border-bottom-color: transparent;
 			}
@@ -360,53 +317,14 @@ a {
 		display: none;
 	}
 
-	&__container {
+	&__inner {
 		min-height: 100%;
 		padding: 0 0 72px;
-
-		@include respond-to(small) {
-			padding-bottom: 20px;
-		}
-	}
-
-	&__search {
-		margin-bottom: 5px;
-		position: relative;
-
-		&-input {
-			height: 35px;
-			line-height: 35px;
-			border: solid lighten($gray, 35%);
-			border-width: 0 0 2px 0;
-		}
-
-		&-btn {
-			@extend %button-reset;
-			width: 35px;
-			height: 35px;
-			border-bottom: 2px solid $green;
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-
-		&-svg {
-			$size: 35px;
-			display: block;
-			width: $size/2;
-			height: $size/2;
-			margin: 0 auto;
-
-			fill: $green;
-		}
-	}
-
-	&__list {
 	}
 
 	&__item {
 		&_drop {
-			&.active {
+			&.is-active {
 				> .mob-nav__drop-list {
 					display: block;
 				}
@@ -417,7 +335,7 @@ a {
 			}
 		}
 
-		&_aside {
+		&_divided {
 			border-top: 1px solid lighten($gray, 30%);
 		}
 
@@ -426,8 +344,9 @@ a {
 			$size: 14px;
 			width: $size;
 			height: $size;
+			margin-top: -$size/2;
 			position: absolute;
-			top: 44px/2 - $size/2 - 3px;
+			top: 50%;
 			right: 10px;
 			transition: transform .3s;
 
@@ -464,11 +383,7 @@ a {
 		font-size: 0;
 		text-align: center;
 		width: 100%;
-		margin-top: -42px; // from bottom. ico height + 5px
-
-		@include respond-to(small) {
-			display: none;
-		}
+		margin-top: -42px; // ico height + 10px
 
 		.social__item {
 			float: none;
@@ -538,17 +453,21 @@ a {
 	}
 }
 
-// ---------------------------------------------
-//					 CATEGORIES && ASIDE BLOCKS
-// =============================================
+// 		CATEGORIES && ASIDE BLOCKS
+// ========================================
 // wrap for categories and aside blocks on main page
 .two-cols {
-	// @extend %holder;
-
 	@include respond-to(medium) {
 		@include clrf;
+	}
+	@include respond-to(large) {
+		margin-bottom: 10px;
+	}
 
-		&__item {
+	&__item {
+		margin-bottom: 20px;
+
+		@include respond-to(medium) {
 			&:first-child {
 				float: right;
 				width: calc-percentage(642px);
@@ -558,15 +477,9 @@ a {
 			width: calc-percentage(340px);
 		}
 	}
-
-	@include respond-to(large) {
-		margin-bottom: 10px;
-	}
 }
 
 .categories {
-	$parent-width: 322px;
-
 	// off-canvas fixed position on mobile
 	@extend %mob-menu-common;
 	color: #99a1a7;
@@ -579,7 +492,6 @@ a {
 		visibility: visible;
 		transition-delay: 0s;
 		padding: 5px 0 4px;
-		margin-bottom: 10px;
 		border: solid $light-gray;
 		border-width: 1px 1px 4px;
 	}
@@ -588,7 +500,7 @@ a {
 		margin-bottom: 66px;
 	}
 
-	&_two-cols {
+	&_wide {
 		@include respond-to(large) {
 			margin-bottom: 20px;
 		}
@@ -687,9 +599,12 @@ a {
 }
 
 .box-wrap {
-	margin-bottom: 10px;
 	padding: 10px;
 	background: $bg-box;
+
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
 
 	@include respond-to(small) {
 		padding: 10px 15px;
@@ -700,7 +615,9 @@ a {
 		border-width: 0 1px 1px 0;
 	}
 	@include respond-to(large) {
-		margin-bottom: 20px;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
 	}
 }
 
@@ -708,8 +625,7 @@ a {
 	$dots-size: 5px;
 	$bd-w: 2px;
 	$dots-position: ($dots-size + $bd-w)/2;
-
-	// original:
+	// non-base64:
 	// <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#45c8dc" /></svg>
 
 	font-family: $tahoma;
@@ -717,7 +633,7 @@ a {
 	text-align: center;
 
 	@include respond-to(medium) {
-		border: $bd-w solid $color-bd-box;
+		border: $bd-w solid $medium-gray;
 		position: relative;
 
 		&:before,
@@ -748,6 +664,7 @@ a {
 		vertical-align: top;
 		min-width: 170px;
 		max-width: 90%;
+		padding: 0 5px;
 		margin-bottom: 10px;
 		font-size: 20px;
 		color: $medium-blue;
@@ -767,9 +684,8 @@ a {
 	}
 }
 
-// ---------------------------------------------
-//					 TOP SHOPS
-// =============================================
+// 		TOP SHOPS
+// ========================================
 .top-shops {
 	margin-left: -8px;
 	padding: 5px 5px 2px 0;
@@ -808,35 +724,33 @@ a {
 	&__link {
 		display: block;
 		height: 100%;
-		padding: 0 3px 1px 19px;
-		font-size: 0;
-
-		&:before {
-			content: "";
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-		}
+		padding: 0 2px 1px 19px;
+		background: #fff;
+		background-clip: content-box;
+		position: relative;
+		@include vertical;
 
 		@include respond-to(xlarge) {
-			position: relative;
-			padding-left: 27px;
+			padding-left: 25px;
+		}
 
-			&:hover:after {
-				opacity: 1;
-			}
+		&:hover:after {
+			opacity: 1;
+		}
 
-			&:after {
-				content: "";
-				height: 100%;
-				border-bottom: 2px solid $green;
-				border-radius: 0 0 0 11px/5px;
-				opacity: 0;
+		&:after {
+			content: "";
+			height: 100%;
+			border-bottom: 2px solid $green-darken;
+			border-radius: 0 0 0 30px/7px;
+			opacity: 0;
 
-				position: absolute;
-				left: 6px;
-				right: 0;
-				bottom: -2px;
+			position: absolute;
+			left: 6px;
+			right: 0;
+			bottom: -1px;
+
+			@include respond-to(xlarge) {
 				transition: opacity .3s;
 			}
 		}
@@ -861,51 +775,20 @@ a {
 	}
 }
 
-// ---------------------------------------------
-//					 TILES
-// =============================================
+// 		TILES
+// ========================================
 .tiles-wrap {
-	margin-bottom: 33px;
+	margin-bottom: 30px;
+
+	@include respond-to(large) {
+		margin-bottom: 35px;
+	}
 }
 
 .tiles {
 	font: 17px/20px $gloria;
 	color: $dark-gray;
 	@include clrf;
-
-	// justify items. inline-blocks
-	// @include respond-to(small) {
-	// 	font-size: 0;
-	// 	line-height: 0;
-	// 	text-align: justify;
-	// 	text-justify: distribute; // IE
-
-	// 	&:after {
-	// 		content: "";
-	// 		display: inline-block;
-	// 		width: 100%;
-	// 	}
-	// }
-
-	// &_wide {
-	// 	.tiles__item {
-	// 		@include respond-to(small) {
-	// 			width: span(6);
-
-	// 			&:last-child {
-	// 				@include push(3);
-	// 			}
-	// 		}
-	// 		@include respond-to(large) {
-	// 			width: span(4);
-	// 			margin-bottom: 30px;
-
-	// 			&:last-child {
-	// 				margin-left: 0;
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	&_wide {
 		.tiles__item {
@@ -929,17 +812,15 @@ a {
 				margin-top: 0;
 			}
 			@include respond-to(large) {
-				width: auto;
-				margin-left: 3px;
+				width: 152px;
 			}
 		}
 	}
 
 	&__item {
-		// font: 17px/20px $gloria;
 		margin-bottom: gutter();
 		background: #fff;
-		border: 1px dashed $color-bd-dashed;
+		border: 1px dashed $medium-gray;
 
 		@include respond-to(small) {
 			@include gallery(6);
@@ -948,12 +829,6 @@ a {
 			@include gallery(4 of 8);
 			margin-bottom: 20px;
 		}
-
-		// @include respond-to(small) {
-		// 	display: inline-block;
-		// 	vertical-align: top;
-		// 	text-align: left;
-		// }
 	}
 
 	&__content-wrap {
@@ -966,37 +841,31 @@ a {
 		height: 115px;
 		margin: 0 -12px 15px;
 		padding: 0 10px;
-		border-bottom: 1px dashed $color-bd-dashed;
 		text-align: center;
-		font-size: 0;
 		position: relative;
-
 		// image vertical alignment
-		&:before {
+		@include vertical;
+
+		&:after {
 			content: "";
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
+			border-bottom: 1px dashed $medium-gray;
+
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
 		}
 
-		// anim border on a.img-wrap hover
 		@include respond-to(xlarge) {
-			&:hover:after {
-				opacity: 1;
-				transform: scale(1);
+			&:after {
+				transition: transform .3s, border-color .5s .2s;
 			}
 
-			&:after {
-				content: "";
-				width: 100%;
-				border-bottom: 2px solid lighten($green, 5%);
-
-				position: absolute;
-				bottom: -1px;
-				left: 0;
-				opacity: 0;
-				transform: scale(0, 1);
-				transition: transform .3s, opacity .3s;
+			// anim border on a.img-wrap hover
+			&:hover:after {
+				border-bottom: 2px solid $green;
+				transform: scaleX(0.75);
+				transition-delay: 0s;
 			}
 		}
 	}
@@ -1054,98 +923,29 @@ a {
 		white-space: nowrap;
 
 		@include respond-to(large) {
-			width: auto;
-			min-width: 152px;
+			width: 152px;
 			margin: 0 0 0 3px;
-		}
-	}
-
-	&__social {
-		display: none;
-
-		@include respond-to(large) {
-			display: block;
-			margin-top: -3px;
-			padding: 12px 0 13px;
-			font-size: 0;
-			line-height: 1;
-			text-align: center;
-			border-top: 1px dashed $color-bd-dashed;
-
-			&-item {
-				&:first-child {
-					margin-left: 13px;
-				}
-
-				display: inline-block;
-				vertical-align: top;
-				margin-left: 3px;
-				border-radius: 50%;
-
-				transition: background .3s;
-
-				&:hover {
-					&.-facebook {
-						background: hsb(221, 57, 73);
-					}
-					&.-twitter {
-						background: hsb(200, 71, 100);
-					}
-					&.-vk {
-						background: hsb(206, 57, 73);
-					}
-					&.-ok {
-						background: hsb(50, 80, 95);
-					}
-				}
-
-				&.-facebook {
-					background: hsb(221, 37, 73);
-				}
-				&.-twitter {
-					background: hsb(200, 51, 100);
-				}
-				&.-vk {
-					background: hsb(206, 27, 73);
-				}
-				&.-ok {
-					background: hsb(48, 100, 98);
-				}
-			}
-
-			&-link {
-				display: block;
-				width: 18px;
-				height: 18px;
-				padding: 4px;
-			}
-
-			&-svg {
-				display: block;
-				width: 100%;
-				height: 100%;
-				fill: #fff;
-			}
 		}
 	}
 
 	&__more {
 		@extend %button-reset;
+		display: block;
 		width: 100%;
-		padding: 9px;
-		font-size: 13px;
+		padding: 10px;
+		font-size: 12px;
 		color: $green;
 		text-align: center;
 		word-spacing: 1px;
 		background: #fff;
-		border: 1px dashed $color-bd-dashed;
+		border: 1px dashed $medium-gray;
 
 		&:hover {
 			color: #fff;
 			background: $green;
 		}
 
-		@include respond-to(large) {
+		@include respond-to(xlarge) {
 			margin-top: -10px;
 			transition: background .3s, color .3s;
 		}
@@ -1157,17 +957,17 @@ a {
 			&:after {
 				$w: 7px;
 				$h: 4px;
-				$c: #dfe1e1;
 				content: "";
 				width: 0;
 				height: 0;
-				border-top: $h solid $c;
+				margin-top: -$h/2;
+				border-top: $h solid #dfe1e1;
 				border-right: $w/2 solid transparent;
 				border-left: $w/2 solid transparent;
 
 				position: absolute;
-				top: 5px;
-				right: -15px;
+				top: 50%;
+				right: -14px;
 			}
 		}
 	}
@@ -1231,9 +1031,6 @@ a {
 		@include sprite-position($ico-clock);
 	}
 
-	&__ttl {
-	}
-
 	&__val,
 	&__day {
 		float: right;
@@ -1251,37 +1048,10 @@ a {
 	}
 }
 
-.what-promo {
-	margin-bottom: 30px;
-	font: 14px/1.2 $tahoma;
-	color: #879299;
-
-	@include respond-to(large) {
-		margin-bottom: 42px;
-	}
-
-	h2 {
-		font: 25px/1.2 $gloria;
-		color: $green;
-		margin-bottom: 10px;
-
-		@include respond-to(medium) {
-			margin-bottom: 17px;
-		}
-	}
-
-	p {
-		margin-bottom: 18px;
-	}
-
-	strong {
-		color: #646e74;
-		font-weight: bold;
-	}
-}
-
 // latest BLOG news
 .blog-news {
+	margin-bottom: 30px;
+
 	&__list {
 		padding-top: 10px;
 		margin-bottom: -10px;
@@ -1322,18 +1092,27 @@ a {
 		box-shadow: 0 2px 0 #e1e4e4;
 
 		@include respond-to(xlarge) {
-			transition: box-shadow .3s;
+			transition: box-shadow .3s, color .3s;
 		}
 
 		&:hover {
+			color: $gray;
 			text-decoration: none;
-			box-shadow: 0 2px 0 $green;
+			box-shadow: 0 2px 0 $green-darken;
+
+			.blog-news__ico-day {
+				color: $green-darken;
+			}
 		}
 
 		&-day {
 			display: block;
 			font-size: 21px;
 			color: $green;
+
+			@include respond-to(xlarge) {
+				transition: color .3s;
+			}
 		}
 	}
 
@@ -1355,7 +1134,7 @@ a {
 
 .bottom-bar {
 	@extend %links-bar-styles;
-	margin-top: 20px;
+	margin-top: 30px;
 	padding: 3px 0 4px;
 	font: 15px/1 $tahoma;
 	text-align: center;
@@ -1364,33 +1143,28 @@ a {
 		margin-top: 42px;
 	}
 
-	&__links-wrap {
+	&__container {
 		@include respond-to(large) {
-			padding-left: 10px;
-			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+
+			&:after {
+				content: none;
+			}
 		}
 	}
 
 	&__link {
 		display: inline-block;
-		padding: 8px;
+		padding: 8px 5px;
+		margin: 0 12px;
 		color: inherit;
-
-		@include respond-to(large) {
-			&:first-child {
-				margin-left: 0;
-			}
-
-			float: left;
-			margin-left: 34px;
-		}
 	}
 }
 
 .site-footer {
-	padding: 30px 0 15px;
+	padding: 30px 0 20px;
 	text-align: center;
-	overflow: hidden;
 
 	@include respond-to(medium) {
 		text-align: left;
@@ -1401,7 +1175,7 @@ a {
 
 	&__left,
 	&__center {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 
 		@include respond-to(medium) {
 			margin-bottom: 0;
@@ -1410,26 +1184,34 @@ a {
 
 	&__left {
 		@include respond-to(medium) {
-			@include span(4);
-			margin-top: 2px;
+			float: left;
+			margin-right: -100%;
 		}
 	}
 
 	&__center {
 		@include respond-to(medium) {
-			@include span(4);
-			padding-left: calc-percentage(42px);
+			float: left;
+			width: 100%;
+			padding: 0 232px 0 186px; // right-left elems size
+			text-align: center;
+		}
+		@include respond-to(large) {
+			padding-right: span(4);
 		}
 	}
 
 	&__right {
 		@include respond-to(medium) {
-			@include span(4 last);
+			float: right;
+			margin-left: -100%;
 			text-align: right;
+			font-size: 0;
 		}
 		@include respond-to(large) {
-			text-align: left;
+			@include span(4 last);
 			padding-left: 2px;
+			text-align: left;
 		}
 	}
 
@@ -1437,6 +1219,12 @@ a {
 	&__social {
 		display: inline-block;
 		vertical-align: top;
+	}
+
+	&__social {
+		@include respond-to(large) {
+			margin-left: 74px;
+		}
 	}
 
 	&__stats {
@@ -1447,7 +1235,10 @@ a {
 			vertical-align: middle;
 			width: 88px;
 			height: 31px;
-			margin-right: calc-percentage(26px); // no font-size: 0 on parent
+			margin-right: 10px;
+		}
+		@include respond-to(large) {
+			margin-right: 29px;
 		}
 	}
 
@@ -1466,6 +1257,13 @@ a {
 		float: right;
 		width: calc-percentage(660px);
 	}
+
+	&_full-width {
+		@include respond-to(medium) {
+			float: none;
+			width: auto;
+		}
+	}
 }
 
 .aside {
@@ -1475,16 +1273,15 @@ a {
 	}
 }
 
-// ---------------------------------------------
-//					 POST
-// =============================================
-.post {
-	margin-bottom: 24px;
-	padding-top: 2px;
+// 		TEXT-CONTENT / POST
+// ========================================
+// scope text styles to text content
+.text-content {
 	font: 13px/20px $gloria;
 	color: #99a1a7;
+	margin-bottom: 25px;
 
-	&__ico {
+	.ico {
 		float: left;
 		width: 48px;
 		height: 48px;
@@ -1493,11 +1290,11 @@ a {
 		overflow: hidden;
 	}
 
-	&__img-wrap {
+	.img-wrap {
 		min-height: 100px;
 		margin-bottom: 10px;
 		background: #fff;
-		border: 1px dashed $color-bd-dashed;
+		border: 1px dashed $medium-gray;
 		overflow: hidden;
 		position: relative;
 
@@ -1525,15 +1322,36 @@ a {
 		margin-bottom: 3px;
 	}
 
+	strong {
+		color: #646e74;
+		font-weight: bold;
+	}
+
 	p {
 		margin-bottom: 20px;
 	}
 
+	// text-content MODIFIERS
+	// must be at the bottom of the module due to cascading styles
 	&_shop {
-		margin-bottom: 26px;
-
 		h2 {
 			margin: -3px 0 15px;
+		}
+	}
+
+	&_promo {
+		font: 14px/1.2 $tahoma;
+		color: #879299;
+		margin-bottom: 30px;
+
+		@include respond-to(large) {
+			margin-bottom: 40px;
+		}
+
+		h2 {
+			font-size: 25px;
+			color: $green;
+			margin-bottom: 15px;
 		}
 	}
 }
@@ -1619,7 +1437,7 @@ a {
 			float: left;
 			margin-left: 3px;
 			padding: 5px 17px 5px;
-			border: 1px solid $color-bd-dashed;
+			border: 1px solid $medium-gray;
 		}
 	}
 }
@@ -1634,7 +1452,6 @@ a {
 	}
 
 	&__title {
-		@extend %heading;
 		margin-left: 3px;
 		color: $green-blue-darken;
 	}
@@ -1646,7 +1463,7 @@ a {
 	&__item {
 		margin-bottom: gutter();
 		background: #fff;
-		border: 1px dashed $color-bd-dashed;
+		border: 1px dashed $medium-gray;
 
 		@include respond-to(small) {
 			@include span(6);
@@ -1666,7 +1483,7 @@ a {
 			font: 16px/1 $gloria;
 			text-align: center;
 			background: #fafafa;
-			border-bottom: 1px dashed $color-bd-dashed;
+			border-bottom: 1px dashed $medium-gray;
 		}
 
 		&-text {
@@ -1678,7 +1495,7 @@ a {
 			display: block;
 			padding: 3px 10px 3px;
 			font-size: 13px;
-			border-top: 1px dashed $color-bd-dashed;
+			border-top: 1px dashed $medium-gray;
 		}
 	}
 }
@@ -1687,7 +1504,7 @@ a {
 	padding: 7px 10px 8px 19px;
 	margin-bottom: 20px;
 	background: #fff;
-	border: 1px dashed $color-bd-dashed;
+	border: 1px dashed $medium-gray;
 	font: 15px/18px $gloria;
 	color: $green-blue-darken;
 	overflow: hidden;
@@ -1719,9 +1536,8 @@ a {
 	}
 }
 
-// ---------------------------------------------
-//					 MOBILE
-// =============================================
+// 		MOBILE
+// ========================================
 .overlay {
 	width: 0;
 	height: 0;
@@ -1741,9 +1557,8 @@ a {
 	}
 }
 
-// ---------------------------------------------
-//					 MOBILE ACTIVE
-// =============================================
+// 		MOBILE ACTIVE
+// ========================================
 // active classes on body
 .mob-menu-active {
 	overflow: hidden;

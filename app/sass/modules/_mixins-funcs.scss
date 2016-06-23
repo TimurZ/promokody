@@ -44,8 +44,8 @@
 @mixin justify {
 	font-size: 0;
 	line-height: 0;
-	text-justify: distribute; // IE
 	text-align: justify;
+	text-justify: distribute; // IE
 
 	&:after {
 		content: "";

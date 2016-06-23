@@ -1,37 +1,13 @@
 ;(function() {
 	"use strict";
-	var doc, trigger, params, closeAllSections, acdn;
-	doc = document;
 
-	// params = {
-	// 	accordionTrigger: ".js-accordion-trigger",
-	// 	activeCls: "active"
-	// }
-	// trigger = doc.querySelector(params.accordionTrigger);
+	var doc = document,
+			accdn;
 
-	// if (trigger) {
-	// 	closeAllSections = function(el) {
-	// 		el.removeClass(params.activeCls);
-	// 		el.siblings().removeClass(params.activeCls);
-	// 	}
-
-	// 	$(trigger).on("click", function(e) {
-	// 		var parent = $(this).parent();
-
-	// 		if (parent.is("." + params.activeCls)) {
-	// 			closeAllSections(parent);
-	// 		} else {
-	// 			closeAllSections(parent);
-	// 			parent.addClass(params.activeCls);
-	// 		}
-	// 		e.preventDefault();
-	// 	});
-	// }
-
-	var accdn = {
+	accdn = {
 		params: {
 			accordionTrigger: ".js-accordion-trigger",
-			activeCls: "active"
+			activeCls: "is-active"
 		},
 
 		init: function() {

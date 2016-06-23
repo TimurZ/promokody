@@ -7,6 +7,8 @@
 
 	var main = {
 		init: function() {
+			this.resizeTimer = null;
+
 			this.listeners();
 		},
 
@@ -19,6 +21,14 @@
 			});
 			$(".overlay").on("click", function() {
 				$(bd).removeClass(main.objToStr(main.menusActiveCls));
+			});
+
+			wnd.addEventListener("resize", function() {
+				if (main.resizeTimer !== null) clearTimeout(main.resizeTimer);
+
+				main.resizeTimer = setTimeout(function() {
+					main.removeActiveCls();
+				}, 200);
 			});
 		},
 
@@ -34,6 +44,14 @@
 				str += obj[key] + " ";
 			}
 			return str;
+		},
+
+		removeActiveCls: function() {
+			var wndW = wnd.innerWidth;
+
+			if (wndW > 530) {
+				$(bd).removeClass(this.menusActiveCls.categoriesActive);
+			}
 		}
 	};
 
@@ -43,7 +61,7 @@
 			this.clickFlag = false;
 			this.tapFlag = false;
 			this.rippleBox = null;
-			// same as longest animation/transition
+			// same as $ripple-duration in scss file
 			this.remRippleTimeout = 400;
 
 			this.checkClassList();
@@ -51,25 +69,25 @@
 		},
 
 		listeners: function() {
-			doc.addEventListener("touchstart", this.delegateCls(".ripple", this.newRipple));
-			doc.addEventListener("mousedown", this.delegateCls(".ripple", this.newRipple));
-
+			doc.addEventListener("touchstart", this.delegateCls("ripple", this.newRipple));
+			doc.addEventListener("mousedown", this.delegateCls("ripple", this.newRipple));
 			// binding ripples obj to remove func
 			doc.addEventListener("touchend", this.removeRipple.bind(this));
 			doc.addEventListener("touchcancel", this.removeRipple.bind(this));
+			doc.addEventListener("touchmove", this.removeRipple.bind(this));
 			doc.addEventListener("mouseup", this.removeRipple.bind(this));
-			doc.addEventListener("mouseout", this.delegateMouseleaveCls(".ripple", this.removeRipple));
+			doc.addEventListener("mouseout", this.delegateMouseleaveCls(this.removeRipple));
 		},
 
 		delegateCls: function(cls, func) {
 			if (cls[0] === ".") cls = cls.slice(1);
 
-			return function() {
+			return function(e) {
 				// http://stackoverflow.com/questions/7018919/how-to-bind-touchstart-and-click-events-but-not-respond-to-both
 				// prevents double execution with mouse && touch
 				// don't proceed if there was a click
 				if (ripples.tapFlag) return;
-				var target = arguments[0].target;
+				var target = e.target;
 
 				while (!ripples.hasClass(target, cls)) {
 					target = target.parentNode;
@@ -82,12 +100,11 @@
 		},
 
 		// https://learn.javascript.ru/mousemove-mouseover-mouseout-mouseenter-mouseleave#делегирование
-		delegateMouseleaveCls: function(cls, func) {
-			return function() {
+		delegateMouseleaveCls: function(func) {
+			return function(e) {
 				// don't proceed if there wasn't a click
 				if (!ripples.clickFlag) return;
-
-				var relatedTarget = arguments[0].relatedTarget;
+				var relatedTarget = e.relatedTarget;
 
 				while (relatedTarget) {
 					if (relatedTarget === ripples.rippleBox) return;
@@ -161,19 +178,15 @@
 		},
 
 		removeRipple: function() {
-			var remRipple;
 			// don't proceed if there wasn't a click
 			if (!ripples.clickFlag) return;
+			// this === ripples obj
+			var remRipple = this.ripplesQueue.pop();
 
-			remRipple = ripples.ripplesQueue.pop();
-
-			if (remRipple) {
-				remRipple.className += " ripple-effect-out";
-				// a little bit hacky, but easier and there's less listeners
-				// same as longest animation/transition
-				// this === ripples obj
-				setTimeout(this.rippleBox.removeChild.bind(this.rippleBox, remRipple), this.remRippleTimeout);
-			}
+			remRipple.className += " ripple-effect-out";
+			// a little bit hacky, but easier and there's less listeners
+			// same as longest animation/transition
+			setTimeout(this.rippleBox.removeChild.bind(this.rippleBox, remRipple), this.remRippleTimeout);
 
 			ripples.clickFlag = false;
 			// http://stackoverflow.com/questions/7018919/how-to-bind-touchstart-and-click-events-but-not-respond-to-both

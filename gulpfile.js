@@ -58,8 +58,8 @@ var params = {
 	}
 };
 
-//					 SASS-CSS
-// =============================================
+// 		SASS-CSS
+// ========================================
 gulp.task('sass', function () {
 	gulp.src(path.src.sass + '*.scss')
 		.pipe(sourcemaps.init())
@@ -90,15 +90,15 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(path.src.css));
 });
 
-//					 CLEAN
-// =============================================
+// 		CLEAN
+// ========================================
 // remove distribution directory before build
 gulp.task('clean', function (cb) {
    rimraf(path.build.root, cb);
 });
 
-//					 CSS
-// =============================================
+// 		CSS
+// ========================================
 // minify css
 gulp.task('minCss', ['clean'], function () {
 	gulp.src(path.src.css + '*.css')
@@ -106,8 +106,8 @@ gulp.task('minCss', ['clean'], function () {
 		.pipe(gulp.dest(path.build.css));
 });
 
-//					 JS
-// =============================================
+// 		JS
+// ========================================
 // concat && uglify
 gulp.task('js', ['clean'], function() {
 	var libs = gulp.src(path.src.js + 'libs/**'), // all files
@@ -129,21 +129,21 @@ gulp.task('js', ['clean'], function() {
 		.pipe(gulp.dest(path.build.js));
 });
 
-//					 HTML
-// =============================================
+// 		HTML
+// ========================================
 // parse HTML to replace non-optimized references
 gulp.task('html', ['clean'], function () {
 	gulp.src(path.src.root + '*.html')
 		.pipe(htmlreplace({
 			// 'js': ['js/plugins.min.js', 'js/scripts.min.js']
 			get js() {
-				var rootFldLngth = path.build.root.length,
-						jsFolder = path.build.js.slice(rootFldLngth);
+				var rootFldrLngth = path.build.root.length,
+						jsFldr = path.build.js.slice(rootFldrLngth);
 
 				var key,
 						arr = [];
 				for (key in params.jsConcatNames) {
-					arr.push(jsFolder + params.jsConcatNames[key]);
+					arr.push(jsFldr + params.jsConcatNames[key]);
 				}
 				return arr;
 			}
@@ -151,15 +151,19 @@ gulp.task('html', ['clean'], function () {
 		.pipe(gulp.dest(path.build.root));
 });
 
-//					 COPY
-// =============================================
+// 		COPY
+// ========================================
 gulp.task('copy', ['clean'], function() {
-	var imgSprite = path.src.img + 'sprite/*.*',
-			imgSvg = path.src.images + 'svg/*.*';
+	var imgSprite = path.src.img + 'sprite/**/*.*',
+			imgSvg = path.src.img + 'svg/**/*.*';
 
-	var images = gulp.src([path.src.img + '**/*.*', '!'+imgSprite, '!'+imgSvg]),
+	var favicon = gulp.src(path.src.root + 'favicon*'),
+			images = gulp.src([path.src.img + '**/*.*', '!'+imgSprite, '!'+imgSvg]),
 			fonts = gulp.src(path.src.root + 'fonts/**'),
 			ajax = gulp.src(path.src.root + 'ajax/**');
+
+	favicon
+		.pipe(gulp.dest(path.build.root));
 
 	images
 		.pipe(gulp.dest(path.build.img));
@@ -171,22 +175,22 @@ gulp.task('copy', ['clean'], function() {
 		.pipe(gulp.dest(path.build.root + 'ajax'));
 });
 
-//					 BUILD
-// =============================================
+// 		BUILD
+// ========================================
 gulp.task('build', ['html', 'minCss', 'js', 'copy']);
 
-//					 WATCH
-// =============================================
+// 		WATCH
+// ========================================
 gulp.task('watch', function () {
 	gulp.watch(path.src.sass + '**/*.scss', ['sass']);
 });
 
-//					 DEFAULT
-// =============================================
+// 		DEFAULT
+// ========================================
 gulp.task('default', ['sass', 'watch']);
 
-//					 SPRITE
-// =============================================
+// 		SPRITE
+// ========================================
 gulp.task('sprite', function() {
 	var sprite = gulp.src(path.src.img + 'sprite/*.png').pipe(spritesmith({
 		retinaSrcFilter: params.sprite.retina ? [path.src.img + 'sprite/*@2x.png'] : false,
@@ -200,8 +204,8 @@ gulp.task('sprite', function() {
 	sprite.css.pipe(gulp.dest(path.src.sass + 'modules'));
 });
 
-//					 SPRITE-FALLBACK
-// =============================================
+// 		SPRITE-FALLBACK
+// ========================================
 // gulp.task('sprite-fallback', function() {
 // 	var fallback = gulp.src(path.src.img + 'fallback/*.png').pipe(spritesmith({
 // 		imgName: 'sprite_fallback.png',
