@@ -92,11 +92,8 @@ a {
 // 		HEADER
 // ==============================
 .site-header {
-	padding: 15px 0;
+	padding: 20px 0;
 
-	@include respond-to(small) {
-		padding: calc-percentage(30px) 0 calc-percentage(19px);
-	}
 	@include respond-to(large) {
 		padding: 30px 0 19px;
 	}
@@ -396,23 +393,33 @@ a {
 	font: 14px/1 $tahoma;
 	color: #bdc3c6;
 	text-align: center;
-	margin-bottom: 20px;
 	overflow: hidden;
 
 	@include respond-to(medium) {
-		margin-bottom: 0;
+		margin-top: -10px;
 	}
-	@include respond-to(large) {
-		margin-top: -11px;
+
+	&_top {
+		margin-bottom: gutter();
+
+		@include respond-to(medium) {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+	&_mobile {
+		@include respond-to(medium) {
+			display: none;
+		}
 	}
 
 	&__item {
-		&:first-child {
-			margin-left: 0;
-		}
-
 		float: left;
-		margin-left: 4px;
+
+		&:not(:first-child) {
+			margin-left: 4px;
+		}
 
 		&:hover,
 		&.active {
@@ -488,16 +495,17 @@ a {
 
 	@include respond-to(small) {
 		width: auto;
+		padding: 5px 0 4px;
+		margin-bottom: 20px;
+		border: solid $light-gray;
+		border-width: 1px 1px 4px;
 		position: static;
 		visibility: visible;
 		transition-delay: 0s;
-		padding: 5px 0 4px;
-		border: solid $light-gray;
-		border-width: 1px 1px 4px;
 	}
 	@include respond-to(large) {
 		padding: 9px 0 11px;
-		margin-bottom: 66px;
+		margin-bottom: 65px;
 	}
 
 	&_wide {
@@ -1186,6 +1194,7 @@ a {
 		@include respond-to(medium) {
 			float: left;
 			margin-right: -100%;
+			margin-top: 2px;
 		}
 	}
 
@@ -1281,6 +1290,21 @@ a {
 	color: #99a1a7;
 	margin-bottom: 25px;
 
+	h2 {
+		font: 18px/1.2 $gloria;
+		color: $green-blue-darken;
+		margin-bottom: 3px;
+	}
+
+	strong {
+		color: #646e74;
+		font-weight: bold;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
 	.ico {
 		float: left;
 		width: 48px;
@@ -1302,7 +1326,7 @@ a {
 			margin-bottom: 0;
 			float: left;
 			width: calc-percentage(320px, 660px);
-			min-width: (320px/1.5);
+			min-width: (320px/1.2);
 			// just wanted to try classic padding hack)
 			padding-bottom: calc-percentage(128px, 660px);
 			margin-right: calc-percentage(22px, 660px);
@@ -1316,26 +1340,11 @@ a {
 		}
 	}
 
-	h2 {
-		font: 18px/1.2 $gloria;
-		color: $green-blue-darken;
-		margin-bottom: 3px;
-	}
-
-	strong {
-		color: #646e74;
-		font-weight: bold;
-	}
-
-	p {
-		margin-bottom: 20px;
-	}
-
 	// text-content MODIFIERS
 	// must be at the bottom of the module due to cascading styles
 	&_shop {
 		h2 {
-			margin: -3px 0 15px;
+			margin-bottom: 15px;
 		}
 	}
 
@@ -1443,13 +1452,9 @@ a {
 }
 
 .expired {
-	padding-top: 10px;
 	font: 14px/20px $gloria;
 	color: #828e8e;
-
-	@include respond-to(large) {
-		padding-top: 26px;
-	}
+	margin-bottom: 10px;
 
 	&__title {
 		margin-left: 3px;
@@ -1461,7 +1466,7 @@ a {
 	}
 
 	&__item {
-		margin-bottom: gutter();
+		margin-bottom: 10px;
 		background: #fff;
 		border: 1px dashed $medium-gray;
 
@@ -1488,7 +1493,9 @@ a {
 
 		&-text {
 			display: block;
-			padding: 10px;
+			height: 40px;
+			margin: 10px;
+			overflow: hidden;
 		}
 
 		&-bottom {

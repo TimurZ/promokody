@@ -9,103 +9,108 @@
 </head>
 <body>
 	<header class="site-header">
-		<div class="site-header__top">
-			<button class="menu-trigger site-header__categories-trigger js-categories-btn" title="categories menu">
-				<svg class="menu-trigger__svg">
-					<use xlink:href="#ico-menu_categories"></use>
-				</svg><!-- /.menu-trigger__Svg -->
-			</button>
-			<button class="menu-trigger site-header__menu-trigger js-menu-btn" title="menu">
-				<svg class="menu-trigger__svg">
-					<use xlink:href="#ico-menu"></use>
-				</svg><!-- /.menu-trigger__svg -->
-			</button>
-			<h1 class="logo site-header__logo"><a href="#" class="logo__link">promokody.com.ua</a></h1>
-			<form action="#" class="site-header__search">
-				<fieldset>
-					<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt site-header__search-input">
-					<button class="site-header__search-btn" type="submit">
-						<svg class="site-header__search-svg">
-							<use xlink:href="#ico-search"></use>
-						</svg><!-- /.site-header__search-svg -->
-					</button>
-				</fieldset>
-			</form><!-- /.site-header__search -->
-			<ul class="social site-header__social">
-				<li class="social__item"><a href="#" class="social__link" title="vk">
-						<svg class="social__svg">
-							<use xlink:href="#ico-vk_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
-						<svg class="social__svg">
-							<use xlink:href="#ico-odnoklassniki_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="facebook">
-						<svg class="social__svg">
-							<use xlink:href="#ico-facebook_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="google+">
-						<svg class="social__svg">
-							<use xlink:href="#ico-google_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="twitter">
-						<svg class="social__svg">
-							<use xlink:href="#ico-twitter_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-			</ul><!-- /.social site-header__social -->
-		</div><!-- /.site-header__top -->
-		<nav class="main-nav">
-			<ul class="main-nav__list">
-				<li class="main-nav__item"><a href="#" class="main-nav__link">Главная</a></li>
-				<li class="main-nav__item main-nav__item_drop"><a href="#" class="main-nav__link">Категории магазинов</a>
-					<ul class="main-nav__drop-list">
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item1</a></li>
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item2</a></li>
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item3</a></li>
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item4</a></li>
-					</ul><!-- /.main-nav__drop-list -->
-				</li>
-				<li class="main-nav__item"><a href="#" class="main-nav__link">Промокоды</a></li>
-				<li class="main-nav__item"><a href="#" class="main-nav__link">Блог</a></li>
-				<li class="main-nav__item main-nav__item_aside main-nav__item_ico"><a href="#" class="main-nav__link">Как это работает?</a></li><!-- /.main-nav__item -->
-			</ul><!-- /.main-nav__list -->
-		</nav><!-- /.main-nav -->
+		<div class="container">
+			<div class="site-header__top">
+				<button class="menu-trigger site-header__categories-trigger js-categories-btn" title="categories menu">
+					<svg class="menu-trigger__svg">
+						<use xlink:href="#ico-menu_categories"></use>
+					</svg><!-- /.menu-trigger__Svg -->
+				</button>
+				<button class="menu-trigger site-header__menu-trigger js-menu-btn" title="menu">
+					<svg class="menu-trigger__svg">
+						<use xlink:href="#ico-menu"></use>
+					</svg><!-- /.menu-trigger__svg -->
+				</button>
+				<h1 class="logo site-header__logo"><a href="#" class="logo__link">promokody.com.ua</a></h1>
+				<form action="#" class="search-form site-header__search-form">
+					<fieldset>
+						<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt search-form__txt">
+						<button class="search-form__btn ripple" type="submit">
+							<svg class="search-form__btn-svg">
+								<use xlink:href="#ico-search"></use>
+							</svg><!-- /.site-header__search-svg -->
+						</button>
+						<div class="pseudo-border search-form__pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+					</fieldset>
+				</form><!-- /.site-header__search -->
+				<ul class="social site-header__social">
+					<li class="social__item"><a href="#" class="social__link" title="vk">
+							<svg class="social__svg">
+								<use xlink:href="#ico-vk_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
+							<svg class="social__svg">
+								<use xlink:href="#ico-odnoklassniki_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="facebook">
+							<svg class="social__svg">
+								<use xlink:href="#ico-facebook_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="google+">
+							<svg class="social__svg">
+								<use xlink:href="#ico-google_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="twitter">
+							<svg class="social__svg">
+								<use xlink:href="#ico-twitter_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+				</ul><!-- /.social site-header__social -->
+			</div><!-- /.site-header__top -->
+			<nav class="main-nav">
+				<ul class="main-nav__list">
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Главная</a></li>
+					<li class="main-nav__item main-nav__item_drop"><a href="#" class="main-nav__link ripple">Категории магазинов</a>
+						<ul class="main-nav__drop-list">
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item1</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item2</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item3</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item4</a></li>
+						</ul><!-- /.main-nav__drop-list -->
+					</li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Промокоды</a></li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Блог</a></li>
+					<li class="main-nav__item main-nav__item_aside main-nav__item_ico"><a href="#" class="main-nav__link ripple">Как это работает?</a></li><!-- /.main-nav__item -->
+				</ul><!-- /.main-nav__list -->
+			</nav><!-- /.main-nav -->
+		</div><!-- /.container -->
 	</header><!-- /.site-header -->
 	<nav class="mob-nav">
-		<div class="mob-nav__container">
-			<form action="#" class="mob-nav__search">
+		<div class="mob-nav__inner">
+			<form action="#" class="search-form search-form_mobile">
 				<fieldset>
-					<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt mob-nav__search-input">
-					<button class="mob-nav__search-btn" type="submit">
-						<svg class="mob-nav__search-svg">
+					<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt search-form__txt">
+					<button class="search-form__btn ripple" type="submit" data-ripple-color="#d9d9d9">
+						<svg class="search-form__btn-svg">
 							<use xlink:href="#ico-search"></use>
 						</svg><!-- /.site-header__search-svg -->
 					</button>
+					<div class="pseudo-border search-form__pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
 				</fieldset>
 			</form><!-- /.site-header__search -->
 			<ul class="mob-nav__list">
-				<li class="mob-nav__item"><a href="#" class="mob-nav__link">Галерея</a></li>
-				<li class="mob-nav__item mob-nav__item_drop"><a href="#" class="mob-nav__link js-accordion-trigger">Категории магазинов
-					<svg class="mob-nav__item-svg">
-						<use xlink:href="#ico-arrow_down"></use>
-					</svg>
-				</a>
+				<li class="mob-nav__item"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Галерея</a></li>
+				<li class="mob-nav__item mob-nav__item_drop">
+					<a href="#" class="mob-nav__link js-accordion-trigger ripple" data-ripple-color="#d9d9d9">Категории магазинов
+						<svg class="mob-nav__item-svg">
+							<use xlink:href="#ico-arrow_down"></use>
+						</svg>
+					</a>
 					<ul class="mob-nav__drop-list">
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item1</a></li>
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item2</a></li>
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item3</a></li>
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item4</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item1</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item2</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item3</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item4</a></li>
 					</ul><!-- /.mob-nav__drop-list -->
 				</li>
-				<li class="mob-nav__item mob-nav__item_drop"><a href="#" class="mob-nav__link">Промокоды</a>
+				<li class="mob-nav__item mob-nav__item_drop"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Промокоды</a>
 				</li>
-				<li class="mob-nav__item"><a href="#" class="mob-nav__link">Блог</a></li>
-				<li class="mob-nav__item mob-nav__item_aside"><a href="#" class="mob-nav__link">Как это работает?</a></li>
+				<li class="mob-nav__item"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Блог</a></li>
+				<li class="mob-nav__item mob-nav__item_divided"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Как это работает?</a></li>
 			</ul><!-- /.mob-nav__list -->
 		</div><!-- /.mob-nav__container -->
 		<ul class="social mob-nav__social">
@@ -136,317 +141,326 @@
 				</a></li><!-- /.social__item -->
 		</ul><!-- /.social site-header__social -->
 	</nav><!-- /.mob-nav -->
-	<div class="width-wrapper">
-		<div class="content">
-			<article class="post">
-				<span class="post__ico post__ico_devices">device ico</span>
+	<div class="container">
+		<main class="content">
+			<article class="text-content">
+				<span class="ico ico_devices">device ico</span>
 				<h2>Элекроника и бытовая техника</h2>
 				<p>Бытовая техника — техника, используемая в быту. Предназначается для автоматизации и облегчения определённых работ/для развлечения/для создания комфорта в повседневной жизни человека[1]. Классифицируется по значимости (необходима, желательна, можно обойтись), по размеру (малая бытовая техника (англ.) и крупная бытовая техника (англ.)), целевому назначению и т. п.</p>
 				<p>Интеллектуальная бытовая техника (умная бытовая техника) — новый класс бытовой техники, как правило, имеющая встроенный одноплатный компьютер и оснащённая искусственным интеллектом, автоматически работающая по заранее разработанной программе или же по командам подаваемым со стороны потребителя. Эти устройства как правило имеют подключение к интернету, а также могут взаимодействовать с системами контроля и управления «умным домом». Данная техника предназначена для создания комфорта и максимального облегчения домашних работ, по-возможности с минимальным участием человека.</p>
-			</article><!-- /.post -->
-			<ul class="tiles">
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/wildberries.jpg"
-								data-srcset="images/wildberries.jpg 1x,
-												images/wildberries@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">23</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/yulmart.jpg"
-								data-srcset="images/yulmart.jpg 1x,
-												images/yulmart@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">23</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_food" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/sapato.jpg"
-								data-srcset="images/sapato.jpg 1x,
-												images/sapato@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">23</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_devices" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_delivery" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/technopark.jpg"
-								data-srcset="images/technopark.jpg 1x,
-												images/technopark@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">31</span>
-								<span class="ico-counter__day">день</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_books" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_gift" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/ion.jpg"
-								data-srcset="images/ion.jpg 1x,
-												images/ion@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">3</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_sport" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/lamoda.jpg"
-								data-srcset="images/lamoda.jpg 1x,
-												images/lamoda@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">23</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_health" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_delivery" data-tooltip="rly helpful info">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/foroffice.jpg"
-								data-srcset="images/foroffice.jpg 1x,
-												images/foroffice@2x.jpg" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">31</span>
-								<span class="ico-counter__day">день</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_house" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_gift" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/ozon.jpg"
-								data-srcset="images/ozon.jpg 1x,
-												images/ozon@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">3</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_children" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/ion.jpg"
-								data-srcset="images/ion.jpg 1x,
-												images/ion@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">3</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_sport" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/lamoda.jpg"
-								data-srcset="images/lamoda.jpg 1x,
-												images/lamoda@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">23</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_health" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_delivery" data-tooltip="rly helpful info">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/foroffice.jpg"
-								data-srcset="images/foroffice.jpg 1x,
-												images/foroffice@2x.jpg" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">31</span>
-								<span class="ico-counter__day">день</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_house" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_gift" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-				<li class="tiles__item">
-					<div class="tiles__content-wrap">
-						<a href="#" class="tiles__img-wrap">
-							<img src="images/ajax-loader.gif"
-								data-src="images/ozon.jpg"
-								data-srcset="images/ozon.jpg 1x,
-												images/ozon@2x.jpg 2x" alt="shop logo image" class="lazyload">
-						</a>
-						<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
-						<a href="#" class="tiles__link">Все промокоды магазина</a>
-					</div><!-- /.tiles__content-wrap -->
-					<div class="tiles__bottom">
-						<ul class="tiles__icons">
-							<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
-								<strong class="ico-counter_ttl">истекает</strong>
-								<span class="ico-counter__val">3</span>
-								<span class="ico-counter__day">дня</span>
-							</li>
-							<li class="tiles__icons-item tiles__icons-item_children" data-tooltip="smth">icon</li>
-							<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
-						</ul><!-- /.tiles__icons -->
-						<button class="btn tiles__btn">Показать промокод</button>
-					</div><!-- /.tiles__bottom -->
-				</li><!-- /.tiles__item -->
-			</ul><!-- /.tiles -->
-			<ul class="pagination">
-				<li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
-				<li class="pagination__item active"><a href="#" class="pagination__link">2</a></li>
-				<li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
-				<li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
-				<li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
-			</ul><!-- /.pagination -->
-		</div><!-- /.content -->
+			</article><!-- /.text-content -->
+			<div class="tiles-wrap">
+				<ul class="pagination pagination_top pagination_mobile">
+					<li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+					<li class="pagination__item active"><a href="#" class="pagination__link">2</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
+				</ul><!-- /.pagination -->
+				<ul class="tiles">
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/wildberries.jpg"
+									data-srcset="images/wildberries.jpg 1x,
+													images/wildberries@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">23</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/yulmart.jpg"
+									data-srcset="images/yulmart.jpg 1x,
+													images/yulmart@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">23</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_food" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/sapato.jpg"
+									data-srcset="images/sapato.jpg 1x,
+													images/sapato@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">23</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_devices" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_delivery" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/technopark.jpg"
+									data-srcset="images/technopark.jpg 1x,
+													images/technopark@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">31</span>
+									<span class="ico-counter__day">день</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_books" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_gift" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/ion.jpg"
+									data-srcset="images/ion.jpg 1x,
+													images/ion@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">3</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_sport" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/lamoda.jpg"
+									data-srcset="images/lamoda.jpg 1x,
+													images/lamoda@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">23</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_health" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_delivery" data-tooltip="rly helpful info">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/foroffice.jpg"
+									data-srcset="images/foroffice.jpg 1x,
+													images/foroffice@2x.jpg" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">31</span>
+									<span class="ico-counter__day">день</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_house" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_gift" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/ozon.jpg"
+									data-srcset="images/ozon.jpg 1x,
+													images/ozon@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">3</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_children" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/ion.jpg"
+									data-srcset="images/ion.jpg 1x,
+													images/ion@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">3</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_sport" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/lamoda.jpg"
+									data-srcset="images/lamoda.jpg 1x,
+													images/lamoda@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">23</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_health" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_delivery" data-tooltip="rly helpful info">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/foroffice.jpg"
+									data-srcset="images/foroffice.jpg 1x,
+													images/foroffice@2x.jpg" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">31</span>
+									<span class="ico-counter__day">день</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_house" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_gift" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+					<li class="tiles__item">
+						<div class="tiles__content-wrap">
+							<a href="#" class="tiles__img-wrap ripple" data-ripple-color="#d9d9d9">
+								<img src="images/ajax-loader.gif"
+									data-src="images/ozon.jpg"
+									data-srcset="images/ozon.jpg 1x,
+													images/ozon@2x.jpg 2x" alt="shop logo image" class="lazyload">
+							</a>
+							<p class="tiles__text">Эксклюзив: промокод 1500 рублей на все только на Промокоды</p>
+							<a href="#" class="tiles__link">Все промокоды магазина</a>
+						</div><!-- /.tiles__content-wrap -->
+						<div class="tiles__bottom">
+							<ul class="tiles__icons">
+								<li class="tiles__icons-item ico-counter" data-tooltip="n days left. hurry up!">
+									<strong class="ico-counter_ttl">истекает</strong>
+									<span class="ico-counter__val">3</span>
+									<span class="ico-counter__day">дня</span>
+								</li>
+								<li class="tiles__icons-item tiles__icons-item_children" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item tiles__icons-item_money" data-tooltip="smth2">icon</li>
+							</ul><!-- /.tiles__icons -->
+							<button class="btn tiles__btn ripple">Показать промокод</button>
+						</div><!-- /.tiles__bottom -->
+					</li><!-- /.tiles__item -->
+				</ul><!-- /.tiles -->
+				<ul class="pagination">
+					<li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+					<li class="pagination__item active"><a href="#" class="pagination__link">2</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
+				</ul><!-- /.pagination -->
+			</div><!-- /.tiles-wrap -->
+		</main><!-- /.content -->
 		<aside class="aside">
-			<section class="categories">
+			<div class="categories">
 				<ul class="categories__list">
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#6eb8a9">
 							<div class="categories__ico categories__ico_clothes"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Одежда и обувь, аксессуары</strong>
@@ -455,7 +469,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#8e9bbf">
 							<div class="categories__ico categories__ico_house"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Товары для дома</strong>
@@ -464,7 +478,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#ffdb59">
 							<div class="categories__ico categories__ico_sport"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Спорт и отдых</strong>
@@ -473,7 +487,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#7ad4de">
 							<div class="categories__ico categories__ico_books"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Книги, музыка, фильмы, игры</strong>
@@ -482,7 +496,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#ece29d">
 							<div class="categories__ico categories__ico_gifts"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Подарки и сувениры</strong>
@@ -491,7 +505,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#5b7fa6">
 							<div class="categories__ico categories__ico_travelling"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Путешествия и туризм</strong>
@@ -500,7 +514,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#f5877a">
 							<div class="categories__ico categories__ico_children"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Детские товары</strong>
@@ -509,7 +523,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#3d9399">
 							<div class="categories__ico categories__ico_food"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Еда и напитки</strong>
@@ -518,7 +532,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#3e869b">
 							<div class="categories__ico categories__ico_health"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Красота и здоровье</strong>
@@ -527,7 +541,7 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
+						<a href="#" class="categories__link ripple" data-ripple-color="#abd957">
 							<div class="categories__ico categories__ico_devices"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Элекроника и бытовая техника</strong>
@@ -536,14 +550,19 @@
 						</a>
 					</li><!-- /.categories__item -->
 				</ul>
-			</section><!-- /.categories -->
+			</div><!-- /.categories -->
 			<div class="box-wrap">
 				<div class="box">
 					<strong class="box__title">Подпишитесь<span class="box__subtitle">на рассылку промокодов</span></strong>
 					<form action="#" class="subscribe-form">
 						<fieldset>
-							<input type="text" name="subscribe" placeholder="Введите Вашу почту" class="txt subscribe-form__input">
-							<button type="submit" class="btn subscribe-form__submit">Подписаться</button>
+							<div class="form-row">
+								<input type="text" name="subscribe" placeholder="Введите Вашу почту" class="txt txt_center">
+								<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+							</div><!-- /.form-row -->
+							<div class="form-row">
+								<button type="submit" class="btn subscribe-form__submit ripple">Подписаться</button>
+							</div><!-- /.form-row -->
 						</fieldset>
 					</form>
 				</div><!-- /.box -->
@@ -612,52 +631,54 @@
 				</div><!-- /.box -->
 			</div><!-- /.box-wrap -->
 		</aside><!-- /.aside -->
-	</div><!-- /.width-wrapper -->
+	</div><!-- /.container -->
 	<div class="bottom-bar">
-		<div class="bottom-bar__links-wrap">
+		<div class="container bottom-bar__container">
 			<a href="#" class="bottom-bar__link">Магазинов со скидками: 388</a>
 			<a href="#" class="bottom-bar__link">Актуальных промокодов: 3562</a>
 			<a href="#" class="bottom-bar__link">Новостей об акциях и распродажа: 562</a>
 			<a href="#" class="bottom-bar__link">Товарных групп: 36</a>
-		</div><!-- /.bottom-bar__links-wrap -->
+		</div><!-- /.container -->
 	</div><!-- /.bottom-bar -->
 	<footer class="site-footer">
-		<div class="site-footer__left">
-			<strong class="logo site-footer__logo"><a href="" class="logo__link">promokody.com.ua</a></strong>
-		</div><!-- /.site-footer__left -->
-		<div class="site-footer__center">
-			<ul class="social site-footer__social">
-				<li class="social__item"><a href="#" class="social__link" title="vk">
-						<svg class="social__svg">
-							<use xlink:href="#ico-vk_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
-						<svg class="social__svg">
-							<use xlink:href="#ico-odnoklassniki_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="facebook">
-						<svg class="social__svg">
-							<use xlink:href="#ico-facebook_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="google+">
-						<svg class="social__svg">
-							<use xlink:href="#ico-google_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="twitter">
-						<svg class="social__svg">
-							<use xlink:href="#ico-twitter_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-			</ul><!-- /.social site-footer__social -->
-		</div><!-- /.site-footer__center -->
-		<div class="site-footer__right">
-			<div class="site-footer__stats"><img src="images/stats.jpg" height="31" width="88" alt="live inet"></div><!-- /.site-footer__stats -->
-			<span class="site-footer__copyright">Все права защищены</span>
-		</div><!-- /.site-footer__right -->
+		<div class="container">
+			<div class="site-footer__left">
+				<strong class="logo site-footer__logo"><a href="" class="logo__link">promokody.com.ua</a></strong>
+			</div><!-- /.site-footer__left -->
+			<div class="site-footer__center">
+				<ul class="social site-footer__social">
+					<li class="social__item"><a href="#" class="social__link" title="vk">
+							<svg class="social__svg">
+								<use xlink:href="#ico-vk_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
+							<svg class="social__svg">
+								<use xlink:href="#ico-odnoklassniki_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="facebook">
+							<svg class="social__svg">
+								<use xlink:href="#ico-facebook_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="google+">
+							<svg class="social__svg">
+								<use xlink:href="#ico-google_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="twitter">
+							<svg class="social__svg">
+								<use xlink:href="#ico-twitter_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+				</ul><!-- /.social site-footer__social -->
+			</div><!-- /.site-footer__center -->
+			<div class="site-footer__right">
+				<div class="site-footer__stats"><img src="images/stats.jpg" height="31" width="88" alt="live inet"></div><!-- /.site-footer__stats -->
+				<span class="site-footer__copyright">Все права защищены</span>
+			</div><!-- /.site-footer__right -->
+		</div><!-- /.container -->
 	</footer><!-- /.site-footer -->
 	<div class="overlay" role="presentation"></div><!-- /.overlay -->
 	<script src="js/libs/jquery-2.1.4.min.js"></script>

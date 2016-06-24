@@ -157,9 +157,11 @@
 	}
 }
 
-.post__ico {
-	&_devices {
-		@extend .tiles__icons-item_devices;
+.text-content {
+	.ico {
+		&_devices {
+			@extend .tiles__icons-item_devices;
+		}
 	}
 }
 
