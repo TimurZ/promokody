@@ -8,7 +8,10 @@
 	var main = {
 		init: function() {
 			this.resizeTimer = null;
+			this.fancyboxOpened = false;
 
+			this.lazySizesParams();
+			this.fancy();
 			this.listeners();
 		},
 
@@ -30,6 +33,13 @@
 					main.removeActiveCls();
 				}, 200);
 			});
+
+			// fancybox. orientation change fix
+			wnd.addEventListener("orientationchange", function() {
+				setTimeout(function() {
+					main.updateFancybox();
+				}, 450);
+			});
 		},
 
 		menusActiveCls: {
@@ -49,8 +59,47 @@
 		removeActiveCls: function() {
 			var wndW = wnd.innerWidth;
 
-			if (wndW > 530) {
+			if (wndW >= 767) {
 				$(bd).removeClass(this.menusActiveCls.categoriesActive);
+			}
+		},
+
+		lazySizesParams: function() {
+			wnd.lazySizesConfig = wnd.lazySizesConfig || {};
+			lazySizesConfig.expand = 250;
+		},
+
+		fancy: function() {
+			if ($.fancybox) {
+				$(".js-fancybox").fancybox({
+					autoCenter: true,
+					padding: [0, 0, 0, 0],
+					openEffect: 'none',
+					closeEffect: 'none'
+				});
+
+				$(".js-fancybox-modal").fancybox({
+					wrapCSS: 'fancybox-modal',
+					padding: [0, 0, 0, 0],
+					scrolling: 'visible',
+					openEffect: 'none',
+					closeEffect: 'none',
+					// updates the possible incorrect position of the window
+					// on devices after orientation changes
+					beforeShow: function() {
+						main.fancyboxOpened = true;
+					},
+					beforeClose: function() {
+						main.fancyboxOpened = false;
+					}
+				});
+			}
+		},
+
+		updateFancybox: function() {
+			if (this.fancyboxOpened) {
+				$.fancybox.update();
+				console.log("updated");
 			}
 		}
 	};
@@ -185,7 +234,7 @@
 
 			remRipple.className += " ripple-effect-out";
 			// a little bit hacky, but easier and there's less listeners
-			// same as longest animation/transition
+			// same as $ripple-duration in scss file
 			setTimeout(this.rippleBox.removeChild.bind(this.rippleBox, remRipple), this.remRippleTimeout);
 
 			ripples.clickFlag = false;

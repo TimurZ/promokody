@@ -9,24 +9,47 @@
 }
 
 .btn {
+	@extend %button-reset;
 	display: inline-block;
 	vertical-align: top;
+	width: 100%;
+	height: 38px;
 	padding: 0 5px;
-	font: 14px/1 $tahoma;
+	font: 14px/34px $tahoma; // -4px border 
 	text-align: center;
 	color: #fff;
 	background: $green;
-	border: solid $green-darken;
+	border: solid $green-darker;
 	border-width: 0 0 4px;
 	border-radius: 4px;
 
 	&:hover {
 		background: $green-blue;
-		border-bottom-color: $green-blue-darken;
+		border-bottom-color: $green-blue-darker;
+		text-decoration: none;
 	}
 
+	@include respond-to(large) {
+		width: auto;
+		min-width: 151px;
+	}
 	@include respond-to(xlarge) {
 		transition: background .3s, border-color .3s;
+	}
+
+	&_wider-darker {
+		background: $green-blue;
+		border-color: $green-blue-darker;
+		border-radius: 0;
+
+		&:hover {
+			background: $green;
+			border-bottom-color: $green-darker;
+		}
+
+		@include respond-to(large) {
+			min-width: 200px;
+		}
 	}
 }
 
@@ -65,140 +88,191 @@
 }
 
 %sprite {
-	background-color: #e8eaea;
 	background-image: url(../images/sprite.png);
 	background-repeat: no-repeat;
 
 	@include retina("sprite@2x.png", $spritesheet-width, $spritesheet-height);
 }
 
-.categories__ico {
+.categories-ico {
+	width: 64px;
+	height: 64px;
+	border-radius: 6px;
+	background-color: #e8eaea; // makes icons visible until sprite isn't loaded
+	@extend %sprite;
+
+	&_small {
+		width: 48px;
+		height: 48px;
+		border-radius: 4px;
+
+		&.categories-ico {
+			&_clothes {
+				@include sprite-position($ico01-m);
+			}
+			&_percent {
+				@include sprite-position($ico-percent-m);
+			}
+			&_food {
+				@include sprite-position($ico10-m);
+			}
+			&_money {
+				@include sprite-position($ico-money-m);
+			}
+			&_devices {
+				@include sprite-position($ico18-m);
+			}
+			&_delivery {
+				@include sprite-position($ico-delivery-m);
+			}
+			&_books {
+				@include sprite-position($ico13-m);
+			}
+			&_gift {
+				@include sprite-position($ico-gift-m);
+			}
+			&_gifts {
+				@include sprite-position($ico17-m);
+			}
+			&_sport {
+				@include sprite-position($ico09-m);
+			}
+			&_health {
+				@include sprite-position($ico14-m);
+			}
+			&_house {
+				@include sprite-position($ico05-m);
+			}
+			&_children {
+				@include sprite-position($ico06-m);
+			}
+			&_travelling {
+				@include sprite-position($ico02-m);
+			}
+		}
+	}
+
 	&_clothes {
-		@include sprite($ico01);
+		@include sprite-position($ico01);
 	}
 	&_house {
-		@include sprite($ico05);
+		@include sprite-position($ico05);
 	}
 	&_sport {
-		@include sprite($ico09);
+		@include sprite-position($ico09);
 	}
 	&_books {
-		@include sprite($ico13);
+		@include sprite-position($ico13);
 	}
 	&_gifts {
-		@include sprite($ico17);
+		@include sprite-position($ico17);
 	}
 	&_travelling {
-		@include sprite($ico02);
+		@include sprite-position($ico02);
 	}
 	&_children {
-		@include sprite($ico06);
+		@include sprite-position($ico06);
 	}
 	&_food {
-		@include sprite($ico10);
+		@include sprite-position($ico10);
 	}
 	&_health {
-		@include sprite($ico14);
+		@include sprite-position($ico14);
 	}
 	&_devices {
-		@include sprite($ico18);
+		@include sprite-position($ico18);
+	}
+}
+
+// small ico with n days left
+.ico-counter {
+	width: 48px;
+	height: 48px;
+	padding: 9px 6px 0px 3px;
+
+	font: bold 9px/1.2 $arial;
+	color: $dark-blue;
+	text-transform: uppercase;
+	text-align: right;
+	letter-spacing: -1px;
+
+	background: #e8eaea;
+	position: relative;
+	cursor: default;
+	user-select: none;
+
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		@include sprite-with-sizes($ico-clock);
+	}
+
+	&__val,
+	&__day {
+		float: right;
+	}
+
+	&__val {
+		font-size: 15px;
+		color: #eb3f11;
+	}
+
+	&__day {
+		margin-top: -3px;
+		clear: both;
+		font-size: 8px;
 	}
 }
 
 .main-nav__item_ico {
 	.main-nav__link:before {
-		@include sprite($ico-question);
+		@include sprite-wo-sizes($ico-question);
 	}
 }
 
 .top-shops__item {
-	@include sprite($label);
+	@include sprite-wo-sizes($label);
 }
 
-.tiles__icons-item {
-	&_clothes {
-		@include sprite($ico01-m);
-	}
-	&_percent {
-		@include sprite($ico-percent-m);
-	}
-	&_food {
-		@include sprite($ico10-m);
-	}
-	&_money {
-		@include sprite($ico-money-m);
-	}
-	&_devices {
-		@include sprite($ico18-m);
-	}
-	&_delivery {
-		@include sprite($ico-delivery-m);
-	}
-	&_books {
-		@include sprite($ico13-m);
-	}
-	&_gift {
-		@include sprite($ico-gift-m);
-	}
-	&_sport {
-		@include sprite($ico09-m);
-	}
-	&_health {
-		@include sprite($ico14-m);
-	}
-	&_house {
-		@include sprite($ico05-m);
-	}
-	&_children {
-		@include sprite($ico06-m);
-	}
-	&_travelling {
-		@include sprite($ico02-m);
-	}
-}
-
-.text-content {
-	.ico {
-		&_devices {
-			@extend .tiles__icons-item_devices;
-		}
-	}
+.expired__item-bottom:before {
+	@include sprite-with-sizes($ico-clock-s);
 }
 
 // SOCIAL ICONS
 // =============
 .social {
-	$svg-size: 30px; // without border
-	$svg-size-small: 22px; // without border
-	$border: 1px;
 	$ico-color: $green;
 	$ico-color-hover: #fff;
 	$shadow-color: #eef0f0;
-	$shadow-color-hover: $green-blue-darken;
+	$shadow-color-hover: $green-blue-darker;
 	$bg-color-hover: $green-blue;
 
 	@include clrf;
 
 	&_small {
 		.social__item {
-			margin-left: 3px;
+			&:not(:first-child) {
+				margin-left: 3px;
+			}
 		}
 
 		.social__svg {
-			width: $svg-size-small;
-			height: $svg-size-small;
+			width: 22px;
+			height: 22px;
 		}
 	}
 
 	&__item {
+		float: left;
+		border: 1px solid $green;
+		border-radius: 2px;
+		overflow: hidden;
+
 		&:not(:first-child) {
 			margin-left: 4px;
 		}
-
-		float: left;
-		border: $border solid $green;
-		border-radius: 2px;
-		overflow: hidden;
 	}
 
 	&__link {
@@ -220,8 +294,8 @@
 
 	&__svg {
 		display: block;
-		width: $svg-size;
-		height: $svg-size;
+		width: 30px;
+		height: 30px;
 
 		fill: $ico-color;
 		color: $shadow-color; // shadow
@@ -304,6 +378,26 @@
 // RATING
 // =======
 .rating {
+	$inner-color: transparent;
+	$stroke-color: #dee2e2;
+	$inner-color-hover: #ffca05;
+	$stroke-color-hover: #ffca05;
+
+	&_no-hover {
+		.rating__list-item {
+			cursor: default;
+
+			// override colors to default
+			&:hover,
+			&:hover ~ .rating__list-item {
+				.rating__list-svg {
+					fill: $inner-color;
+					color: $stroke-color;
+				}
+			}
+		}
+	}
+
 	&__text {
 		display: none;
 
@@ -312,10 +406,7 @@
 			vertical-align: middle;
 			font: 16px/1 $gloria;
 			color: $gray;
-			margin-right: 4px;
-		}
-		@include respond-to(large) {
-			vertical-align: top;
+			margin-right: 1px;
 		}
 	}
 
@@ -323,32 +414,45 @@
 		display: inline-block;
 		vertical-align: middle;
 
-		@include respond-to(large) {
-			vertical-align: top;
-		}
-
 		&-item {
-			&:not(:first-child) {
-				margin-right: 2px;
-			}
-
 			float: right;
-			width: 15px;
-			height: 14px;
-			text-indent: -9999px;
-			overflow: hidden;
-			background-color: transparent;
+			padding: 5px 3px;
 			cursor: pointer;
-			@include sprite($star-empty);
+
+			@include respond-to(xlarge) {
+				padding-right: 1px;
+				padding-left: 2px;
+			}
 
 			&:hover,
-			&:hover ~ &,
-			&.active,
-			&.active ~ & {
-				@include sprite-position($star-full);
+			&:hover ~ & {
+				.rating__list-svg {
+					fill: $inner-color-hover;
+					color: $stroke-color-hover;
+				}
+			}
+
+			// prevents overriding for .rating_no-hover
+			&.is-active,
+			&.is-active ~ & {
+				.rating__list-svg {
+					fill: $inner-color-hover !important;
+					color: $stroke-color-hover !important;
+				}
 			}
 		}
 
+		&-svg {
+			display: block;
+			width: 15px;
+			height: 14px;
+			fill: $inner-color;
+			color: $stroke-color;
+
+			@include respond-to(xlarge) {
+				transition: fill .2s, color .2s;
+			}
+		}
 	}
 }
 
@@ -408,7 +512,7 @@
 	pointer-events: none;
 
 	transition: opacity $ripple-duration ease-in;
-	animation: scale-in $ripple-duration ease-out forwards;
+	animation: scale-in $ripple-duration linear forwards;
 }
 
 .ripple-effect-out {

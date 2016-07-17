@@ -4,19 +4,20 @@ $gloria: "aggloriaroman", serif;
 $arial: arial, helvetica, sans-serif; // icons font
 
 // COLORS
-$gray: #879299; // main text color,
-$dark-gray: #606a6a; // tiles text color
-$light-gray: #ebeded; // solid borders
-$medium-gray: #e3e8e8; // dashed border color, posts-meta border color
+$gray: #879299;
+$dark-gray: #606a6a;
+$light-gray: #ebeded;
+$medium-gray: #e3e8e8;
 
-$green: #1abc9c; // main graeen color
-$green-darken: #17a88c; // green darken borders
-$green-blue: #07939e; // nav, social icons hover bg color
-$green-blue-darken: #05757e; // post heading, nav hover bottom border, social hover shadow
+$green: #1abc9c;
+$green-muddy: #66b094;
+$green-darker: #17a88c;
+$green-blue: #07939e;
+$green-blue-darker: #05757e;
 
 $blue: #55c5d1;
-$medium-blue: #06929e; // headings/titles
-$dark-blue: #415b77; // blog news title
+$medium-blue: #06929e;
+$dark-blue: #415b77;
 
 $red: #e63c29;
 
@@ -38,16 +39,16 @@ $susy: (
 
 // RIPPLES
 // ripple defaults
-$ripple-duration: .4s; // same as remRippleTimeout in js file
+$ripple-duration: .4s; // remRippleTimeout in js file must be the same
 $ripple-color: #fff; // can be overwritten with data-ripple-color attr
 $ripple-opacity: .25;
 
 // RESPONSIVE BREAKPOINTS
 // MIN-WIDTH
 $breakpoints: (
-	small: 530px,
+	small: 540px,
 	medium: 767px,
-	large: $container + 23px,
+	large: 1023px,
 	xlarge: 1281px
 );
 

@@ -9,103 +9,108 @@
 </head>
 <body>
 	<header class="site-header">
-		<div class="site-header__top">
-			<button class="menu-trigger site-header__categories-trigger js-categories-btn" title="categories menu">
-				<svg class="menu-trigger__svg">
-					<use xlink:href="#ico-menu_categories"></use>
-				</svg><!-- /.menu-trigger__Svg -->
-			</button>
-			<button class="menu-trigger site-header__menu-trigger js-menu-btn" title="menu">
-				<svg class="menu-trigger__svg">
-					<use xlink:href="#ico-menu"></use>
-				</svg><!-- /.menu-trigger__svg -->
-			</button>
-			<h1 class="logo site-header__logo"><a href="#" class="logo__link">promokody.com.ua</a></h1>
-			<form action="#" class="site-header__search">
-				<fieldset>
-					<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt site-header__search-input">
-					<button class="site-header__search-btn" type="submit">
-						<svg class="site-header__search-svg">
-							<use xlink:href="#ico-search"></use>
-						</svg><!-- /.site-header__search-svg -->
-					</button>
-				</fieldset>
-			</form><!-- /.site-header__search -->
-			<ul class="social site-header__social">
-				<li class="social__item"><a href="#" class="social__link" title="vk">
-						<svg class="social__svg">
-							<use xlink:href="#ico-vk_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
-						<svg class="social__svg">
-							<use xlink:href="#ico-odnoklassniki_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="facebook">
-						<svg class="social__svg">
-							<use xlink:href="#ico-facebook_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="google+">
-						<svg class="social__svg">
-							<use xlink:href="#ico-google_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="twitter">
-						<svg class="social__svg">
-							<use xlink:href="#ico-twitter_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-			</ul><!-- /.social site-header__social -->
-		</div><!-- /.site-header__top -->
-		<nav class="main-nav">
-			<ul class="main-nav__list">
-				<li class="main-nav__item"><a href="#" class="main-nav__link">Главная</a></li>
-				<li class="main-nav__item main-nav__item_drop"><a href="#" class="main-nav__link">Категории магазинов</a>
-					<ul class="main-nav__drop-list">
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item1</a></li>
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item2</a></li>
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item3</a></li>
-						<li class="main-nav__drop-item"><a href="#" class="main-nav__link">item4</a></li>
-					</ul><!-- /.main-nav__drop-list -->
-				</li>
-				<li class="main-nav__item"><a href="#" class="main-nav__link">Промокоды</a></li>
-				<li class="main-nav__item"><a href="#" class="main-nav__link">Блог</a></li>
-				<li class="main-nav__item main-nav__item_aside main-nav__item_ico"><a href="#" class="main-nav__link">Как это работает?</a></li><!-- /.main-nav__item -->
-			</ul><!-- /.main-nav__list -->
-		</nav><!-- /.main-nav -->
+		<div class="container">
+			<div class="site-header__top">
+				<button class="menu-trigger site-header__categories-trigger js-categories-btn" title="categories menu">
+					<svg class="menu-trigger__svg">
+						<use xlink:href="#ico-menu_categories"></use>
+					</svg><!-- /.menu-trigger__Svg -->
+				</button>
+				<button class="menu-trigger site-header__menu-trigger js-menu-btn" title="menu">
+					<svg class="menu-trigger__svg">
+						<use xlink:href="#ico-menu"></use>
+					</svg><!-- /.menu-trigger__svg -->
+				</button>
+				<h1 class="logo site-header__logo"><a href="#" class="logo__link">promokody.com.ua</a></h1>
+				<form action="#" class="search-form site-header__search-form">
+					<fieldset>
+						<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt search-form__txt">
+						<button class="search-form__btn ripple" type="submit">
+							<svg class="search-form__btn-svg">
+								<use xlink:href="#ico-search"></use>
+							</svg><!-- /.site-header__search-svg -->
+						</button>
+						<div class="pseudo-border search-form__pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+					</fieldset>
+				</form><!-- /.site-header__search -->
+				<ul class="social site-header__social">
+					<li class="social__item"><a href="#" class="social__link" title="vk">
+							<svg class="social__svg">
+								<use xlink:href="#ico-vk_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
+							<svg class="social__svg">
+								<use xlink:href="#ico-odnoklassniki_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="facebook">
+							<svg class="social__svg">
+								<use xlink:href="#ico-facebook_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="google+">
+							<svg class="social__svg">
+								<use xlink:href="#ico-google_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="twitter">
+							<svg class="social__svg">
+								<use xlink:href="#ico-twitter_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+				</ul><!-- /.social site-header__social -->
+			</div><!-- /.site-header__top -->
+			<nav class="main-nav">
+				<ul class="main-nav__list">
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Главная</a></li>
+					<li class="main-nav__item main-nav__item_drop"><a href="#" class="main-nav__link ripple">Категории магазинов</a>
+						<ul class="main-nav__drop-list">
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item1</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item2</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item3</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item4</a></li>
+						</ul><!-- /.main-nav__drop-list -->
+					</li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Промокоды</a></li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Блог</a></li>
+					<li class="main-nav__item main-nav__item_aside main-nav__item_ico"><a href="#" class="main-nav__link ripple">Как это работает?</a></li><!-- /.main-nav__item -->
+				</ul><!-- /.main-nav__list -->
+			</nav><!-- /.main-nav -->
+		</div><!-- /.container -->
 	</header><!-- /.site-header -->
 	<nav class="mob-nav">
-		<div class="mob-nav__container">
-			<form action="#" class="mob-nav__search">
+		<div class="mob-nav__inner">
+			<form action="#" class="search-form search-form_mobile">
 				<fieldset>
-					<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt mob-nav__search-input">
-					<button class="mob-nav__search-btn" type="submit">
-						<svg class="mob-nav__search-svg">
+					<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt search-form__txt">
+					<button class="search-form__btn ripple" type="submit" data-ripple-color="#d9d9d9">
+						<svg class="search-form__btn-svg">
 							<use xlink:href="#ico-search"></use>
 						</svg><!-- /.site-header__search-svg -->
 					</button>
+					<div class="pseudo-border search-form__pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
 				</fieldset>
 			</form><!-- /.site-header__search -->
 			<ul class="mob-nav__list">
-				<li class="mob-nav__item"><a href="#" class="mob-nav__link">Галерея</a></li>
-				<li class="mob-nav__item mob-nav__item_drop"><a href="#" class="mob-nav__link js-accordion-trigger">Категории магазинов
-					<svg class="mob-nav__item-svg">
-						<use xlink:href="#ico-arrow_down"></use>
-					</svg>
-				</a>
+				<li class="mob-nav__item"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Галерея</a></li>
+				<li class="mob-nav__item mob-nav__item_drop">
+					<a href="#" class="mob-nav__link js-accordion-trigger ripple" data-ripple-color="#d9d9d9">Категории магазинов
+						<svg class="mob-nav__item-svg">
+							<use xlink:href="#ico-arrow_down"></use>
+						</svg>
+					</a>
 					<ul class="mob-nav__drop-list">
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item1</a></li>
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item2</a></li>
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item3</a></li>
-						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link">item4</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item1</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item2</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item3</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item4</a></li>
 					</ul><!-- /.mob-nav__drop-list -->
 				</li>
-				<li class="mob-nav__item mob-nav__item_drop"><a href="#" class="mob-nav__link">Промокоды</a>
+				<li class="mob-nav__item mob-nav__item_drop"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Промокоды</a>
 				</li>
-				<li class="mob-nav__item"><a href="#" class="mob-nav__link">Блог</a></li>
-				<li class="mob-nav__item mob-nav__item_aside"><a href="#" class="mob-nav__link">Как это работает?</a></li>
+				<li class="mob-nav__item"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Блог</a></li>
+				<li class="mob-nav__item mob-nav__item_divided"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Как это работает?</a></li>
 			</ul><!-- /.mob-nav__list -->
 		</div><!-- /.mob-nav__container -->
 		<ul class="social mob-nav__social">
@@ -136,8 +141,8 @@
 				</a></li><!-- /.social__item -->
 		</ul><!-- /.social site-header__social -->
 	</nav><!-- /.mob-nav -->
-	<div class="width-wrapper">
-		<div class="content">
+	<div class="container">
+		<main class="content">
 			<div class="breadcrumbs">
 				<ul class="breadcrumbs__list">
 					<li class="breadcrumbs__item">
@@ -151,29 +156,169 @@
 					<div class="posts__img-wrap">
 						<a href="#" class="posts__img-link">
 							<img src="images/ajax-loader.gif"
-								data-src="images/post01.jpg"
-								data-srcset="images/post01.jpg 1x,
-												images/post01@2x.jpg 2x" alt="post image" class="lazyload">
+								data-src="images/posts_list01.jpg"
+								data-srcset="images/posts_list01.jpg 1x,
+												images/posts_list01@2x.jpg 2x" alt="posts list image" class="lazyload">
 						</a>
 					</div><!-- /.posts__img-wrap -->
-					<div class="posts__content">
-						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Зимняя одежда для детей — выбираем фирму</a></h2><!-- /.posts__ttl -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Зимняя одежда для детей — выбираем фирму</a></h2>
 						<p class="posts__text">С приближением холодной поры у многих родителей возникает вопрос, касающийся детской зимней одежды. Какие производители зимней детской одежды по качеству превосходят других? На что стоит в первую очередь обратить внимание при покупке зимней одежды для детей?</p><!-- /.posts__text -->
-						<ul class="posts__meta">
-							<li class="posts__meta-item">admin</li>
-							<li class="posts__meta-item">23/01/2015</li>
-							<li class="posts__meta-item">Женские советы</li>
-						</ul><!-- /.posts__meta -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item post-meta__item_name">admin</span>
+							<span class="post-meta__item post-meta__item_date"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item post-meta__item_heading">Женские советы</span>
+						</div><!-- /.post-meta -->
 					</div><!-- /.posts__content -->
-				</article><!-- /.posts__single -->
+				</article><!-- /.post-single -->
+				<article class="posts__single">
+					<div class="posts__img-wrap">
+						<a href="#" class="posts__img-link">
+							<img src="images/ajax-loader.gif"
+								data-src="images/posts_list02.jpg"
+								data-srcset="images/posts_list02.jpg 1x,
+												images/posts_list02@2x.jpg 2x" alt="posts list image" class="lazyload">
+						</a>
+					</div><!-- /.posts__img-wrap -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Как правильно выбрать женские и мужские духи?</a></h2>
+						<p class="posts__text">Ароматы очень важны в нашей жизни. Они способны пробуждать воспоминания, улучшать настроение, вызывать желания и ассоциации. Когда по улице проходит красивая женщина, неся за собой тонкий шлейф приятных духов, все вокруг невольно поддаются ее пленяющей ауре.</p><!-- /.posts__text -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item">admin</span>
+							<span class="post-meta__item"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item">Женские советы</span>
+						</div><!-- /.post-meta -->
+					</div><!-- /.posts__content -->
+				</article><!-- /.post-single -->
+				<article class="posts__single">
+					<div class="posts__img-wrap">
+						<a href="#" class="posts__img-link">
+							<img src="images/ajax-loader.gif"
+								data-src="images/posts_list03.jpg"
+								data-srcset="images/posts_list03.jpg 1x,
+												images/posts_list03@2x.jpg 2x" alt="posts list image" class="lazyload">
+						</a>
+					</div><!-- /.posts__img-wrap -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Power Balance — как работает браслет и как его использовать?</a></h2>
+						<p class="posts__text">Ароматы очень важны в нашей жизни. Они способны пробуждать воспоминания, улучшать настроение, вызывать желания и ассоциации. Когда по улице проходит красивая женщина, неся за собой тонкий шлейф приятных духов, все вокруг невольно поддаются ее пленяющей ауре.</p><!-- /.posts__text -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item">admin</span>
+							<span class="post-meta__item"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item">Женские советы</span>
+						</div><!-- /.post-meta -->
+					</div><!-- /.posts__content -->
+				</article><!-- /.post-single -->
+				<article class="posts__single">
+					<div class="posts__img-wrap">
+						<a href="#" class="posts__img-link">
+							<img src="images/ajax-loader.gif"
+								data-src="images/posts_list04.jpg"
+								data-srcset="images/posts_list04.jpg 1x,
+												images/posts_list04@2x.jpg 2x" alt="posts list image" class="lazyload">
+						</a>
+					</div><!-- /.posts__img-wrap -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Как правильно выбрать женские и мужские духи?</a></h2>
+						<p class="posts__text">Ароматы очень важны в нашей жизни. Они способны пробуждать воспоминания, улучшать настроение, вызывать желания и ассоциации. Когда по улице проходит красивая женщина, неся за собой тонкий шлейф приятных духов, все вокруг невольно поддаются ее пленяющей ауре.</p><!-- /.posts__text -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item">admin</span>
+							<span class="post-meta__item"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item">Женские советы</span>
+						</div><!-- /.post-meta -->
+					</div><!-- /.posts__content -->
+				</article><!-- /.post-single -->
+				<article class="posts__single">
+					<div class="posts__img-wrap">
+						<a href="#" class="posts__img-link">
+							<img src="images/ajax-loader.gif"
+								data-src="images/posts_list05.jpg"
+								data-srcset="images/posts_list05.jpg 1x,
+												images/posts_list05@2x.jpg 2x" alt="posts list image" class="lazyload">
+						</a>
+					</div><!-- /.posts__img-wrap -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Как правильно выбрать женские и мужские духи?</a></h2>
+						<p class="posts__text">Ароматы очень важны в нашей жизни. Они способны пробуждать воспоминания, улучшать настроение, вызывать желания и ассоциации. Когда по улице проходит красивая женщина, неся за собой тонкий шлейф приятных духов, все вокруг невольно поддаются ее пленяющей ауре.</p><!-- /.posts__text -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item">admin</span>
+							<span class="post-meta__item"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item">Женские советы</span>
+						</div><!-- /.post-meta -->
+					</div><!-- /.posts__content -->
+				</article><!-- /.post-single -->
+				<article class="posts__single">
+					<div class="posts__img-wrap">
+						<a href="#" class="posts__img-link">
+							<img src="images/ajax-loader.gif"
+								data-src="images/posts_list06.jpg"
+								data-srcset="images/posts_list06.jpg 1x,
+												images/posts_list06@2x.jpg 2x" alt="posts list image" class="lazyload">
+						</a>
+					</div><!-- /.posts__img-wrap -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Как правильно выбрать женские и мужские духи?</a></h2>
+						<p class="posts__text">Ароматы очень важны в нашей жизни. Они способны пробуждать воспоминания, улучшать настроение, вызывать желания и ассоциации. Когда по улице проходит красивая женщина, неся за собой тонкий шлейф приятных духов, все вокруг невольно поддаются ее пленяющей ауре.</p><!-- /.posts__text -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item">admin</span>
+							<span class="post-meta__item"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item">Женские советы</span>
+						</div><!-- /.post-meta -->
+					</div><!-- /.posts__content -->
+				</article><!-- /.post-single -->
+				<article class="posts__single">
+					<div class="posts__img-wrap">
+						<a href="#" class="posts__img-link">
+							<img src="images/ajax-loader.gif"
+								data-src="images/posts_list07.jpg"
+								data-srcset="images/posts_list07.jpg 1x,
+												images/posts_list07@2x.jpg 2x" alt="posts list image" class="lazyload">
+						</a>
+					</div><!-- /.posts__img-wrap -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Как правильно выбрать женские и мужские духи?</a></h2>
+						<p class="posts__text">Ароматы очень важны в нашей жизни. Они способны пробуждать воспоминания, улучшать настроение, вызывать желания и ассоциации. Когда по улице проходит красивая женщина, неся за собой тонкий шлейф приятных духов, все вокруг невольно поддаются ее пленяющей ауре.</p><!-- /.posts__text -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item">admin</span>
+							<span class="post-meta__item"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item">Женские советы</span>
+						</div><!-- /.post-meta -->
+					</div><!-- /.posts__content -->
+				</article><!-- /.post-single -->
+				<article class="posts__single">
+					<div class="posts__img-wrap">
+						<a href="#" class="posts__img-link">
+							<img src="images/ajax-loader.gif"
+								data-src="images/posts_list08.jpg"
+								data-srcset="images/posts_list08.jpg 1x,
+												images/posts_list08@2x.jpg 2x" alt="posts list image" class="lazyload">
+						</a>
+					</div><!-- /.posts__img-wrap -->
+					<div class="posts__content posts__content_bottom-mask">
+						<h2 class="posts__ttl"><a href="#" class="posts__ttl-link">Как правильно выбрать женские и мужские духи?</a></h2>
+						<p class="posts__text">Ароматы очень важны в нашей жизни. Они способны пробуждать воспоминания, улучшать настроение, вызывать желания и ассоциации. Когда по улице проходит красивая женщина, неся за собой тонкий шлейф приятных духов, все вокруг невольно поддаются ее пленяющей ауре.</p><!-- /.posts__text -->
+						<div class="post-meta post-meta_at-bottom">
+							<span class="post-meta__item">admin</span>
+							<span class="post-meta__item"><time datetime="2015-01-23">23/01/2015</time></span>
+							<span class="post-meta__item">Женские советы</span>
+						</div><!-- /.post-meta -->
+					</div><!-- /.posts__content -->
+				</article><!-- /.post-single -->
+				<ul class="posts__pagination pagination">
+					<li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+					<li class="pagination__item active"><a href="#" class="pagination__link">2</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
+				</ul><!-- /.pagination -->
 			</div><!-- /.posts -->
-		</div><!-- /.content -->
+		</main><!-- /.content -->
 		<aside class="aside">
-			<section class="categories">
+			<div class="categories">
 				<ul class="categories__list">
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_clothes"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#6eb8a9">
+							<div class="categories__ico categories-ico categories-ico_clothes"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Одежда и обувь, аксессуары</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">15</span></span>
@@ -181,8 +326,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_house"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#8e9bbf">
+							<div class="categories__ico categories-ico categories-ico_house"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Товары для дома</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">150</span></span>
@@ -190,8 +335,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_sport"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#ffdb59">
+							<div class="categories__ico categories-ico categories-ico_sport"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Спорт и отдых</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">50</span></span>
@@ -199,8 +344,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_books"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#7ad4de">
+							<div class="categories__ico categories-ico categories-ico_books"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Книги, музыка, фильмы, игры</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">1 235</span></span>
@@ -208,8 +353,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_gifts"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#ece29d">
+							<div class="categories__ico categories-ico categories-ico_gifts"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Подарки и сувениры</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">563</span></span>
@@ -217,8 +362,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_travelling"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#5b7fa6">
+							<div class="categories__ico categories-ico categories-ico_travelling"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Путешествия и туризм</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">55</span></span>
@@ -226,8 +371,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_children"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#f5877a">
+							<div class="categories__ico categories-ico categories-ico_children"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Детские товары</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">5</span></span>
@@ -235,8 +380,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_food"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#3d9399">
+							<div class="categories__ico categories-ico categories-ico_food"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Еда и напитки</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">125</span></span>
@@ -244,8 +389,8 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_health"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#3e869b">
+							<div class="categories__ico categories-ico categories-ico_health"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Красота и здоровье</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">362</span></span>
@@ -253,23 +398,28 @@
 						</a>
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
-						<a href="#" class="categories__link">
-							<div class="categories__ico categories__ico_devices"></div>
+						<a href="#" class="categories__link ripple" data-ripple-color="#abd957">
+							<div class="categories__ico categories-ico categories-ico_devices"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Элекроника и бытовая техника</strong>
 								<span class="categories__small">промокодов <span class="categories__small-qty">95</span></span>
 							</div>
 						</a>
 					</li><!-- /.categories__item -->
-				</ul>
-			</section><!-- /.categories -->
+				</ul><!-- /.categories-list -->
+			</div><!-- /.categories -->
 			<div class="box-wrap">
 				<div class="box">
 					<strong class="box__title">Подпишитесь<span class="box__subtitle">на рассылку промокодов</span></strong>
 					<form action="#" class="subscribe-form">
 						<fieldset>
-							<input type="text" name="subscribe" placeholder="Введите Вашу почту" class="txt subscribe-form__input">
-							<button type="submit" class="btn subscribe-form__submit">Подписаться</button>
+							<div class="form-row">
+								<input type="text" name="subscribe" placeholder="Введите Вашу почту" class="txt txt_center">
+								<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+							</div><!-- /.form-row -->
+							<div class="form-row">
+								<button type="submit" class="btn btn_wider-darker subscribe-form__btn ripple">Подписаться</button>
+							</div><!-- /.form-row -->
 						</fieldset>
 					</form>
 				</div><!-- /.box -->
@@ -338,52 +488,54 @@
 				</div><!-- /.box -->
 			</div><!-- /.box-wrap -->
 		</aside><!-- /.aside -->
-	</div><!-- /.width-wrapper -->
+	</div><!-- /.container -->
 	<div class="bottom-bar">
-		<div class="bottom-bar__links-wrap">
+		<div class="container bottom-bar__container">
 			<a href="#" class="bottom-bar__link">Магазинов со скидками: 388</a>
 			<a href="#" class="bottom-bar__link">Актуальных промокодов: 3562</a>
 			<a href="#" class="bottom-bar__link">Новостей об акциях и распродажа: 562</a>
 			<a href="#" class="bottom-bar__link">Товарных групп: 36</a>
-		</div><!-- /.bottom-bar__links-wrap -->
+		</div><!-- /.container -->
 	</div><!-- /.bottom-bar -->
 	<footer class="site-footer">
-		<div class="site-footer__left">
-			<strong class="logo site-footer__logo"><a href="" class="logo__link">promokody.com.ua</a></strong>
-		</div><!-- /.site-footer__left -->
-		<div class="site-footer__center">
-			<ul class="social site-footer__social">
-				<li class="social__item"><a href="#" class="social__link" title="vk">
-						<svg class="social__svg">
-							<use xlink:href="#ico-vk_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
-						<svg class="social__svg">
-							<use xlink:href="#ico-odnoklassniki_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="facebook">
-						<svg class="social__svg">
-							<use xlink:href="#ico-facebook_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="google+">
-						<svg class="social__svg">
-							<use xlink:href="#ico-google_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-				<li class="social__item"><a href="#" class="social__link" title="twitter">
-						<svg class="social__svg">
-							<use xlink:href="#ico-twitter_shadow"></use>
-						</svg><!-- /.social__svg -->
-					</a></li><!-- /.social__item -->
-			</ul><!-- /.social site-footer__social -->
-		</div><!-- /.site-footer__center -->
-		<div class="site-footer__right">
-			<div class="site-footer__stats"><img src="images/stats.jpg" height="31" width="88" alt="live inet"></div><!-- /.site-footer__stats -->
-			<span class="site-footer__copyright">Все права защищены</span>
-		</div><!-- /.site-footer__right -->
+		<div class="container">
+			<div class="site-footer__left">
+				<strong class="logo site-footer__logo"><a href="" class="logo__link">promokody.com.ua</a></strong>
+			</div><!-- /.site-footer__left -->
+			<div class="site-footer__center">
+				<ul class="social site-footer__social">
+					<li class="social__item"><a href="#" class="social__link" title="vk">
+							<svg class="social__svg">
+								<use xlink:href="#ico-vk_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
+							<svg class="social__svg">
+								<use xlink:href="#ico-odnoklassniki_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="facebook">
+							<svg class="social__svg">
+								<use xlink:href="#ico-facebook_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="google+">
+							<svg class="social__svg">
+								<use xlink:href="#ico-google_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="twitter">
+							<svg class="social__svg">
+								<use xlink:href="#ico-twitter_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+				</ul><!-- /.social site-footer__social -->
+			</div><!-- /.site-footer__center -->
+			<div class="site-footer__right">
+				<div class="site-footer__stats"><img src="images/stats.jpg" height="31" width="88" alt="live inet"></div><!-- /.site-footer__stats -->
+				<span class="site-footer__copyright">Все права защищены</span>
+			</div><!-- /.site-footer__right -->
+		</div><!-- /.container -->
 	</footer><!-- /.site-footer -->
 	<div class="overlay" role="presentation"></div><!-- /.overlay -->
 	<script src="js/libs/jquery-2.1.4.min.js"></script>

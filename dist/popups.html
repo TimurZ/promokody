@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Popups</title>
+	<link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<div class="site-header__top">
+				<button class="menu-trigger site-header__categories-trigger js-categories-btn" title="categories menu">
+					<svg class="menu-trigger__svg">
+						<use xlink:href="#ico-menu_categories"></use>
+					</svg><!-- /.menu-trigger__Svg -->
+				</button>
+				<button class="menu-trigger site-header__menu-trigger js-menu-btn" title="menu">
+					<svg class="menu-trigger__svg">
+						<use xlink:href="#ico-menu"></use>
+					</svg><!-- /.menu-trigger__svg -->
+				</button>
+				<h1 class="logo site-header__logo"><a href="#" class="logo__link">promokody.com.ua</a></h1>
+				<form action="#" class="search-form site-header__search-form">
+					<fieldset>
+						<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt search-form__txt">
+						<button class="search-form__btn ripple" type="submit">
+							<svg class="search-form__btn-svg">
+								<use xlink:href="#ico-search"></use>
+							</svg><!-- /.site-header__search-svg -->
+						</button>
+						<div class="pseudo-border search-form__pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+					</fieldset>
+				</form><!-- /.site-header__search -->
+				<ul class="social site-header__social">
+					<li class="social__item"><a href="#" class="social__link" title="vk">
+							<svg class="social__svg">
+								<use xlink:href="#ico-vk_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
+							<svg class="social__svg">
+								<use xlink:href="#ico-odnoklassniki_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="facebook">
+							<svg class="social__svg">
+								<use xlink:href="#ico-facebook_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="google+">
+							<svg class="social__svg">
+								<use xlink:href="#ico-google_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="twitter">
+							<svg class="social__svg">
+								<use xlink:href="#ico-twitter_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+				</ul><!-- /.social site-header__social -->
+			</div><!-- /.site-header__top -->
+			<nav class="main-nav">
+				<ul class="main-nav__list">
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Главная</a></li>
+					<li class="main-nav__item main-nav__item_drop"><a href="#" class="main-nav__link ripple">Категории магазинов</a>
+						<ul class="main-nav__drop-list">
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item1</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item2</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item3</a></li>
+							<li class="main-nav__drop-item"><a href="#" class="main-nav__link ripple">item4</a></li>
+						</ul><!-- /.main-nav__drop-list -->
+					</li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Промокоды</a></li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link ripple">Блог</a></li>
+					<li class="main-nav__item main-nav__item_aside main-nav__item_ico"><a href="#" class="main-nav__link ripple">Как это работает?</a></li><!-- /.main-nav__item -->
+				</ul><!-- /.main-nav__list -->
+			</nav><!-- /.main-nav -->
+		</div><!-- /.container -->
+	</header><!-- /.site-header -->
+	<nav class="mob-nav">
+		<div class="mob-nav__inner">
+			<form action="#" class="search-form search-form_mobile">
+				<fieldset>
+					<input type="text" name="search" placeholder="найти товар или магазин ..." class="txt search-form__txt">
+					<button class="search-form__btn ripple" type="submit" data-ripple-color="#d9d9d9">
+						<svg class="search-form__btn-svg">
+							<use xlink:href="#ico-search"></use>
+						</svg><!-- /.site-header__search-svg -->
+					</button>
+					<div class="pseudo-border search-form__pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+				</fieldset>
+			</form><!-- /.site-header__search -->
+			<ul class="mob-nav__list">
+				<li class="mob-nav__item"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Галерея</a></li>
+				<li class="mob-nav__item mob-nav__item_drop">
+					<a href="#" class="mob-nav__link js-accordion-trigger ripple" data-ripple-color="#d9d9d9">Категории магазинов
+						<svg class="mob-nav__item-svg">
+							<use xlink:href="#ico-arrow_down"></use>
+						</svg>
+					</a>
+					<ul class="mob-nav__drop-list">
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item1</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item2</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item3</a></li>
+						<li class="mob-nav__drop-item"><a href="#" class="mob-nav__link mob-nav__drop-link ripple">item4</a></li>
+					</ul><!-- /.mob-nav__drop-list -->
+				</li>
+				<li class="mob-nav__item mob-nav__item_drop"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Промокоды</a>
+				</li>
+				<li class="mob-nav__item"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Блог</a></li>
+				<li class="mob-nav__item mob-nav__item_divided"><a href="#" class="mob-nav__link ripple" data-ripple-color="#d9d9d9">Как это работает?</a></li>
+			</ul><!-- /.mob-nav__list -->
+		</div><!-- /.mob-nav__container -->
+		<ul class="social mob-nav__social">
+			<li class="social__item"><a href="#" class="social__link" title="vk">
+					<svg class="social__svg">
+						<use xlink:href="#ico-vk_shadow"></use>
+					</svg><!-- /.social__svg -->
+				</a></li><!-- /.social__item -->
+			<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
+					<svg class="social__svg">
+						<use xlink:href="#ico-odnoklassniki_shadow"></use>
+					</svg><!-- /.social__svg -->
+				</a></li><!-- /.social__item -->
+			<li class="social__item"><a href="#" class="social__link" title="facebook">
+					<svg class="social__svg">
+						<use xlink:href="#ico-facebook_shadow"></use>
+					</svg><!-- /.social__svg -->
+				</a></li><!-- /.social__item -->
+			<li class="social__item"><a href="#" class="social__link" title="google+">
+					<svg class="social__svg">
+						<use xlink:href="#ico-google_shadow"></use>
+					</svg><!-- /.social__svg -->
+				</a></li><!-- /.social__item -->
+			<li class="social__item"><a href="#" class="social__link" title="twitter">
+					<svg class="social__svg">
+						<use xlink:href="#ico-twitter_shadow"></use>
+					</svg><!-- /.social__svg -->
+				</a></li><!-- /.social__item -->
+		</ul><!-- /.social site-header__social -->
+	</nav><!-- /.mob-nav -->
+	<div class="container">
+		<main class="content">
+			<h2 class="ttl ttl_box">Popups</h2><!-- /.ttl ttl_box -->
+			<div style="padding: 20px; margin-bottom: 30px; background: #fff; border: 1px dashed #e3e8e8">
+				<ul>
+					<li><a href="#promo-details" class="js-fancybox-modal">Promocode popup</a></li>
+				</ul>
+			</div>
+		</main><!-- /.content -->
+		<aside class="aside">
+			<div class="categories">
+				<ul class="categories__list">
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#6eb8a9">
+							<div class="categories__ico categories-ico categories-ico_clothes"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Одежда и обувь, аксессуары</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">15</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#8e9bbf">
+							<div class="categories__ico categories-ico categories-ico_house"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Товары для дома</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">150</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#ffdb59">
+							<div class="categories__ico categories-ico categories-ico_sport"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Спорт и отдых</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">50</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#7ad4de">
+							<div class="categories__ico categories-ico categories-ico_books"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Книги, музыка, фильмы, игры</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">1 235</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#ece29d">
+							<div class="categories__ico categories-ico categories-ico_gifts"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Подарки и сувениры</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">563</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#5b7fa6">
+							<div class="categories__ico categories-ico categories-ico_travelling"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Путешествия и туризм</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">55</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#f5877a">
+							<div class="categories__ico categories-ico categories-ico_children"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Детские товары</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">5</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#3d9399">
+							<div class="categories__ico categories-ico categories-ico_food"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Еда и напитки</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">125</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#3e869b">
+							<div class="categories__ico categories-ico categories-ico_health"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Красота и здоровье</strong>
+								<span class="categories__small">промокодов: <span class="categories__small-qty">362</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+					<li class="categories__item">
+						<a href="#" class="categories__link ripple" data-ripple-color="#abd957">
+							<div class="categories__ico categories-ico categories-ico_devices"></div>
+							<div class="categories__text">
+								<strong class="categories__ttl">Элекроника и бытовая техника</strong>
+								<span class="categories__small">промокодов <span class="categories__small-qty">95</span></span>
+							</div>
+						</a>
+					</li><!-- /.categories__item -->
+				</ul><!-- /.categories-list -->
+			</div><!-- /.categories -->
+			<div class="box-wrap">
+				<div class="box">
+					<strong class="box__title">Подпишитесь<span class="box__subtitle">на рассылку промокодов</span></strong>
+					<form action="#" class="subscribe-form">
+						<fieldset>
+							<div class="form-row">
+								<input type="text" name="subscribe" placeholder="Введите Вашу почту" class="txt txt_center">
+								<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+							</div><!-- /.form-row -->
+							<div class="form-row">
+								<button type="submit" class="btn btn_wider-darker subscribe-form__btn ripple">Подписаться</button>
+							</div><!-- /.form-row -->
+						</fieldset>
+					</form>
+				</div><!-- /.box -->
+			</div><!-- /.box-wrap -->
+			<div class="box-wrap">
+				<div class="box">
+					<strong class="box__title">Топ магазинов</strong>
+					<ul class="top-shops">
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/wildberries_s.jpg" 
+								srcset="images/wildberries_s.jpg 1x,
+												images/wildberries_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/promenad_s.jpg" 
+									srcset="images/promenad_s.jpg 1x,
+													images/promenad_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/stylepit_s.jpg"
+									srcset="images/stylepit_s.jpg 1x,
+													images/stylepit_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/voltoff_s.jpg"
+									srcset="images/voltoff_s.jpg 1x,
+													images/voltoff_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/venik_s.jpg"
+									srcset="images/venik_s.jpg 1x,
+													images/venik_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/lamoda_s.jpg"
+									srcset="images/lamoda_s.jpg 1x,
+													images/lamoda_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/yves_s.jpg"
+									srcset="images/yves_s.jpg 1x,
+													images/yves_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+						<li class="top-shops__item">
+							<a href="#" class="top-shops__link">
+								<img src="images/audiomania_s.jpg"
+									srcset="images/audiomania_s.jpg 1x,
+													images/audiomania_s@2x.jpg 2x" alt="top-shops small image">
+							</a>
+						</li>
+					</ul><!-- /.top-shops -->
+				</div><!-- /.box -->
+			</div><!-- /.box-wrap -->
+		</aside><!-- /.aside -->
+	</div><!-- /.container -->
+	<div class="bottom-bar">
+		<div class="container bottom-bar__container">
+			<a href="#" class="bottom-bar__link">Магазинов со скидками: 388</a>
+			<a href="#" class="bottom-bar__link">Актуальных промокодов: 3562</a>
+			<a href="#" class="bottom-bar__link">Новостей об акциях и распродажа: 562</a>
+			<a href="#" class="bottom-bar__link">Товарных групп: 36</a>
+		</div><!-- /.container -->
+	</div><!-- /.bottom-bar -->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="site-footer__left">
+				<strong class="logo site-footer__logo"><a href="" class="logo__link">promokody.com.ua</a></strong>
+			</div><!-- /.site-footer__left -->
+			<div class="site-footer__center">
+				<ul class="social site-footer__social">
+					<li class="social__item"><a href="#" class="social__link" title="vk">
+							<svg class="social__svg">
+								<use xlink:href="#ico-vk_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="odnoklassniki">
+							<svg class="social__svg">
+								<use xlink:href="#ico-odnoklassniki_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="facebook">
+							<svg class="social__svg">
+								<use xlink:href="#ico-facebook_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="google+">
+							<svg class="social__svg">
+								<use xlink:href="#ico-google_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+					<li class="social__item"><a href="#" class="social__link" title="twitter">
+							<svg class="social__svg">
+								<use xlink:href="#ico-twitter_shadow"></use>
+							</svg><!-- /.social__svg -->
+						</a></li><!-- /.social__item -->
+				</ul><!-- /.social site-footer__social -->
+			</div><!-- /.site-footer__center -->
+			<div class="site-footer__right">
+				<div class="site-footer__stats"><img src="images/stats.jpg" height="31" width="88" alt="live inet"></div><!-- /.site-footer__stats -->
+				<span class="site-footer__copyright">Все права защищены</span>
+			</div><!-- /.site-footer__right -->
+		</div><!-- /.container -->
+	</footer><!-- /.site-footer -->
+	<div id="promo-details" class="promo-details">
+		<h3 class="ttl promo-details__ttl">Лучшие акции и предложения дня!<br>До 50% скидки!</h3>
+		<p class="promo-details__text">Описание условий промокода, нужно было вставить какой то текст для примера. Акции действует с 02.05.2015 до 02.06.2015. На нашем сайте можно найти только лучшие предложения по всем магазинам.</p>
+		<div class="promo-details__row">
+			<div class="form-row">
+				<input type="text" name="promopopup-code" value="Промокод не нужен" class="promo-details__code txt txt_center" disabled>
+			</div><!-- /.form-row -->
+			<div class="form-row">
+				<button class="promo-details__btn-darker btn btn_wider-darker ripple">Скопировать</button>
+			</div><!-- /.form-row -->
+		</div><!-- /.promo-details__row -->
+		<div class="promo-details__row promo-details__row_bg">
+			<a href="#" class="promo-details__btn btn ripple"><span class="promo-details__btn-text">Перейти в магазин</span></a>
+		</div><!-- /.promo-details__row-bg -->
+		<div class="promo-details__row promo-details__row_wide">
+			<form action="#">
+				<fieldset>
+					<div class="form-row">
+						<input type="text" name="promopopup-email" class="promo-details__email txt" placeholder="Введите Ваш E-mail и получите лучшие промокоды">
+						<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+					</div><!-- /.form-row -->
+					<div class="form-row">
+						<button type="submit" class="promo-details__btn-gray btn btn_wider-darker ripple">Получить</button>
+					</div><!-- /.form-row -->
+				</fieldset>
+			</form>
+		</div><!-- /.promo-details__row -->
+	</div><!-- /#promo-details.promo-details -->
+	<div class="overlay" role="presentation"></div><!-- /.overlay -->
+	<script src="js/libs/jquery-2.1.4.min.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

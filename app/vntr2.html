@@ -144,7 +144,7 @@
 	<div class="container">
 		<main class="content">
 			<article class="text-content text-content_shop">
-				<div class="img-wrap">
+				<div class="img-wrap-shop">
 					<img src="images/amazon.jpg"
 						srcset="images/amazon.jpg 1x,
 										images/amazon@2x.jpg 2x" alt="post image">
@@ -153,7 +153,7 @@
 				<p>Бытовая техника — техника, используемая в быту. Предназначается для автоматизации и облегчения определённых работ/для развлечения/для создания комфорта в повседневной жизни человека[1]. Классифицируется по значимости (необходима, желательна, можно обойтись), по размеру (малая бытовая техника (англ.) и крупная бытовая техника (англ.)), целевому назначению и т. п.</p>
 				<p>Интеллектуальная бытовая техника (умная бытовая техника) — новый класс бытовой техники, как правило, имеющая встроенный одноплатный компьютер и оснащённая искусственным интеллектом, автоматически работающая по заранее разработанной программе или же по командам подаваемым со стороны потребителя. Эти устройства как правило имеют подключение к интернету, а также могут взаимодействовать с системами контроля и управления «умным домом». Данная техника предназначена для создания комфорта и максимального облегчения домашних работ, по-возможности с минимальным участием человека.</p>
 				<div class="post-bottom">
-					<ul class="social post-bottom__social social_small">
+					<ul class="social post-bottom__social social_small non-text-content">
 						<li class="social__item"><a href="#" class="social__link" title="vk">
 								<svg class="social__svg">
 									<use xlink:href="#ico-vk_shadow"></use>
@@ -182,12 +182,22 @@
 					</ul><!-- /.social -->
 					<div class="rating post-bottom__rating">
 						<span class="rating__text">Оценка магазина:</span>
-						<ul class="rating__list">
-							<li class="rating__list-item">5 stars</li>
-							<li class="rating__list-item">4 stars</li>
-							<li class="rating__list-item active">3 stars</li>
-							<li class="rating__list-item">2 stars</li>
-							<li class="rating__list-item">1 star</li>
+						<ul class="rating__list non-text-content">
+							<li class="rating__list-item">
+								<svg class="rating__list-svg"><use xlink:href="#ico-star"></use></svg>
+							</li>
+							<li class="rating__list-item">
+								<svg class="rating__list-svg"><use xlink:href="#ico-star"></use></svg>
+							</li>
+							<li class="rating__list-item is-active">
+								<svg class="rating__list-svg"><use xlink:href="#ico-star"></use></svg>
+							</li>
+							<li class="rating__list-item">
+								<svg class="rating__list-svg"><use xlink:href="#ico-star"></use></svg>
+							</li>
+							<li class="rating__list-item">
+								<svg class="rating__list-svg"><use xlink:href="#ico-star"></use></svg>
+							</li>
 						</ul><!-- /.rating__list -->
 					</div><!-- /.rating -->
 				</div><!-- /.post__bottom -->
@@ -213,10 +223,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -238,10 +248,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -263,10 +273,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -288,10 +298,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -313,10 +323,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -338,10 +348,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -363,10 +373,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -388,10 +398,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -413,10 +423,10 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 					<li class="tiles__item">
@@ -438,16 +448,16 @@
 									<span class="ico-counter__val">23</span>
 									<span class="ico-counter__day">дня</span>
 								</li>
-								<li class="tiles__icons-item tiles__icons-item_clothes" data-tooltip="smth">icon</li>
-								<li class="tiles__icons-item tiles__icons-item_percent" data-tooltip="smth2">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_clothes" data-tooltip="smth">icon</li>
+								<li class="tiles__icons-item categories-ico categories-ico_small categories-ico_percent" data-tooltip="smth2">icon</li>
 							</ul><!-- /.tiles__icons -->
-							<button class="btn tiles__btn ripple">Показать промокод</button>
+							<a href="#promo-details" class="tiles__btn btn ripple js-fancybox-modal">Показать промокод</a>
 						</div><!-- /.tiles__bottom -->
 					</li><!-- /.tiles__item -->
 				</ul><!-- /.tiles -->
 			</div><!-- /.tiles-wrap -->
-			<div class="expired">
-				<h3 class="ttl expired__title">Истекшие промокоды Amazon</h3>
+			<section class="expired expired_pull-top">
+				<h2 class="ttl expired__title">Истекшие промокоды Amazon</h2>
 				<ul class="expired__items">
 					<li class="expired__item">
 						<strong class="expired__item-top">Истек</strong>
@@ -480,14 +490,111 @@
 						<span class="expired__item-bottom">Истек 7 дней назад</span>
 					</li><!-- /.expired__item -->
 				</ul><!-- /.expired__items -->
-			</div><!-- /.expired -->
+				<span class="expired__more"><a href="#" class="expired__more-link ripple" data-ripple-color="#d9d9d9">...и еще <span>1,139</span> истекших промокодов</a></span>
+			</section><!-- /.expired -->
+			<section class="reviews">
+				<h2 class="ttl reviews__ttl">Отзывы о магазине Amazon</h2>
+				<ul class="reviews-list">
+					<li class="reviews-list__item">
+						<div class="reviews-list__content">
+							<div class="reviews-list__top">
+								<span class="reviews-list__name">Наташа,</span>
+								<time datetime="2000-01-01" class="reviews-list__response-time">3 месяца назад</time>
+							</div><!-- /.reviews-list__top -->
+							<span class="reviews-list__text">Спасибо вам за вашу работу. Всегда пользуюсь вашим сайтом. Подскажите скоро ли Будет в Бонприкс скидка 10%+бесплатная доставка? Спасибо.</span>
+							<div class="reviews-list__bottom">
+								<a href="#" class="reviews-list__bottom-link ripple" data-ripple-color="#d9d9d9">Ответить</a>
+								<a href="#" class="reviews-list__bottom-link ripple" data-ripple-color="#d9d9d9">Поделиться</a>
+							</div><!-- /.reviews-list__bottom -->
+						</div><!-- /.reviews-list__content -->
+						<ul class="reviews-list reviews-list_inner">
+							<li class="reviews-list__item">
+								<div class="reviews-list__content">
+									<div class="reviews-list__top">
+										<span class="reviews-list__name">Кристина</span><span class="reviews-list__to-whom">Наташе</span>
+										<time datetime="2000-01-01" class="reviews-list__response-time">3 месяца назад</time>
+									</div><!-- /.reviews-list__top -->
+									<span class="reviews-list__text">Спасибо вам за вашу работу. Всегда пользуюсь вашим сайтом. Подскажите скоро ли Будет в Бонприкс скидка 10%+бесплатная доставка? Спасибо.</span>
+								</div><!-- /.reviews-list__content -->
+							</li><!-- /.reviews__item -->
+						</ul><!-- /.reviews-list -->
+					</li><!-- /.reviews__item -->
+					<li class="reviews-list__item">
+						<div class="reviews-list__content">
+							<div class="reviews-list__top">
+								<span class="reviews-list__name">Наташа,</span>
+								<time datetime="2000-01-01" class="reviews-list__response-time">3 месяца назад</time>
+							</div><!-- /.reviews-list__top -->
+							<span class="reviews-list__text">Спасибо вам за вашу работу. Всегда пользуюсь вашим сайтом. Подскажите скоро ли Будет в Бонприкс скидка 10%+бесплатная доставка? Спасибо.</span>
+							<div class="reviews-list__bottom">
+								<a href="#" class="reviews-list__bottom-link ripple" data-ripple-color="#d9d9d9">Ответить</a>
+								<a href="#" class="reviews-list__bottom-link ripple" data-ripple-color="#d9d9d9">Поделиться</a>
+							</div><!-- /.reviews-list__bottom -->
+						</div><!-- /.reviews-list__content -->
+					</li><!-- /.reviews__item -->
+				</ul><!-- /.reviews-list -->
+				<div class="reviews-form">
+					<form action="#">
+						<fieldset>
+							<div class="form-row form-row_smaller">
+								<input type="text" name="reviews-name" class="txt" placeholder="Ваше имя">
+								<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+							</div><!-- /.form-row -->
+							<div class="form-row form-row_small">
+								<textarea name="reviews-comment" cols="30" rows="10" class="textarea" placeholder="Ваш отзыв"></textarea>
+								<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+							</div><!-- /.form-row -->
+							<div class="form-row form-row_small">
+								<button type="submit" class="btn ripple">Оставить отзыв</button>
+							</div><!-- /.form-row -->
+						</fieldset>
+					</form>
+				</div><!-- /.reviews-form -->
+			</section><!-- /.reviews -->
+			<article class="text-content text-content_about-shop">
+				<h2>О магазине Amazon промокоды</h2>
+				<p>Компания Bonprix работает на европейском рынке с 1986 года и является частью крупнейшего концерна OTTO Versand, официальное представительство которого располагается в Гамбурге. Одежда этой немецкой фирмы является образцом безупречного качества и доступной цены. Об успехе компании на мировом рынке говорит тот факт, что ее клиентская база – около 15 миллионов покупателей, в том числе в Украине и странах бывшего СНГ.  Бонприкс в Украине предлагает клиентам заказывать продукцию посредством интернета, воспользовавшись специальными промокодами Бонприкс со скидками и виртуальным каталогом, где подробно описаны характеристики всех товаров, которые снабжены качественными фотографиями и точными размерными сетками.</p>
+				<h3>О магазине Amazon</h3>
+				<p>В ассортименте немецкой компании есть одежда на любой вкус и для любого возраста. В основном ассортимент магазина рассчитан на женщин всех возрастных групп, но в наличии также имеются товары для мужчин и детей. Каждый покупатель имеет право использовать актуальные промокоды Бонприкс и получать существенные скидки на выбранные товары. В линии BPC (BonPrix Collection) покупатели смогут подобрать для себя и своих близких модную повседневную одежду. Джинсовые модели для молодежи можно найти в линии John Baner Jeanswear, элегантные модели классического направления – в линии BPC Selection, женственные платья – в линии Bodyflirt, а супер-модные трендовые модели яркого дизайна, востребованные молодыми девушками, – в линии Rainbow. Преимуществом этой фирмы можно назвать также то, что в каталоге представлены не только модели известных брендов, но и одежда собственных торговых марок, не менее качественная, чем продукция более «раскрученных» фирм. Таким образом каждый покупатель обязательно найдет одежду на свой вкус и цвет, тем более что с акционными промокодами Бонприкс можно серьезно сэкономить. Доставка заказов осуществляется в течении 3 недель при условии, что товары имеются в наличии на складе компании. Наиболее популярные изделия часто на складе отсутствуют, поэтому сроки доставки могут увеличиться до 4-6 недель. Заказы отправляются Укрпочтой или курьерскими службами, стоимость всех видов доставки одинаковая - 39 гривен. Часто интернет-магазин предлагает клиентам уникальные купоны и коды Бонприкс с бесплатной доставкой, которые позволят вам не платить за доставку своей покупки. Покупатель вправе вернуть или обменять товар, который ему не подошел в течении 14 дней после получения посылки. Для этого необходимо заполнить специальную форму возврата, которая прилагается к каждому заказу, сохранив оригинальную упаковку товара, не бывшего в употреблении. Деньги будут возвращены покупателю почтовым переводом в течении 4 недель. В магазине Bonprix действует несколько способов оплаты: через банк или наложенным платежом при получении заказа. Если у вас возникнут вопросы по поводу заказа товаров на сайте или активации скидочного промокода Бонприкс – обращайтесь в службу поддержки клиентов.</p>
+			</article><!-- /.text-content -->
+			<section class="add-inf">
+				<h3 class="ttl add-inf__ttl">Дополнительная информация</h3>
+				<div class="add-inf__cols">
+					<div class="add-inf__col">
+						<div class="add-inf__row">
+							<span class="add-inf__sub-ttl">E-mail</span>
+							<a href="mailto:info@amazon.ru" class="add-inf__link">info@amazon.ru</a>
+						</div><!-- /.add-inf__row -->
+						<div class="add-inf__row">
+							<span>(044) 364 74 74 (c 8 до 21 часа по Коскве)</span>
+						</div><!-- /.add-inf__row -->
+					</div><!-- /.add-inf__col -->
+					<div class="add-inf__col">
+						<div class="add-inf__row">
+							<span class="add-inf__sub-ttl">Адрес</span>
+							<span>а/я Amazon, г. Россия, 02300</span>
+						</div><!-- /.add-inf__row -->
+						<div class="add-inf__row">
+							<span class="add-inf__sub-ttl">Ссылка на сайт:</span>
+							<a href="#" class="add-inf__link">http://www.amazon.com/</a>
+						</div><!-- /.add-inf__row -->
+					</div><!-- /.add-inf__col -->
+					<div class="add-inf__col">
+						<span class="add-inf__sub-ttl">Способы оплаты</span>
+						<ul class="add-inf__list">
+							<li class="add-inf__list-item">банковский перевод</li>
+							<li class="add-inf__list-item">наложенным платежом при получении заказа</li>
+						</ul><!-- /.add-inf__list -->
+					</div><!-- /.add-inf__col -->
+				</div><!-- /.add-inf__cols -->
+			</section><!-- /.add-inf -->
 		</main><!-- /.content -->
 		<aside class="aside">
 			<div class="categories">
 				<ul class="categories__list">
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#6eb8a9">
-							<div class="categories__ico categories__ico_clothes"></div>
+							<div class="categories__ico categories-ico categories-ico_clothes"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Одежда и обувь, аксессуары</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">15</span></span>
@@ -496,7 +603,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#8e9bbf">
-							<div class="categories__ico categories__ico_house"></div>
+							<div class="categories__ico categories-ico categories-ico_house"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Товары для дома</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">150</span></span>
@@ -505,7 +612,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#ffdb59">
-							<div class="categories__ico categories__ico_sport"></div>
+							<div class="categories__ico categories-ico categories-ico_sport"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Спорт и отдых</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">50</span></span>
@@ -514,7 +621,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#7ad4de">
-							<div class="categories__ico categories__ico_books"></div>
+							<div class="categories__ico categories-ico categories-ico_books"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Книги, музыка, фильмы, игры</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">1 235</span></span>
@@ -523,7 +630,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#ece29d">
-							<div class="categories__ico categories__ico_gifts"></div>
+							<div class="categories__ico categories-ico categories-ico_gifts"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Подарки и сувениры</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">563</span></span>
@@ -532,7 +639,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#5b7fa6">
-							<div class="categories__ico categories__ico_travelling"></div>
+							<div class="categories__ico categories-ico categories-ico_travelling"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Путешествия и туризм</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">55</span></span>
@@ -541,7 +648,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#f5877a">
-							<div class="categories__ico categories__ico_children"></div>
+							<div class="categories__ico categories-ico categories-ico_children"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Детские товары</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">5</span></span>
@@ -550,7 +657,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#3d9399">
-							<div class="categories__ico categories__ico_food"></div>
+							<div class="categories__ico categories-ico categories-ico_food"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Еда и напитки</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">125</span></span>
@@ -559,7 +666,7 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#3e869b">
-							<div class="categories__ico categories__ico_health"></div>
+							<div class="categories__ico categories-ico categories-ico_health"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Красота и здоровье</strong>
 								<span class="categories__small">промокодов: <span class="categories__small-qty">362</span></span>
@@ -568,14 +675,14 @@
 					</li><!-- /.categories__item -->
 					<li class="categories__item">
 						<a href="#" class="categories__link ripple" data-ripple-color="#abd957">
-							<div class="categories__ico categories__ico_devices"></div>
+							<div class="categories__ico categories-ico categories-ico_devices"></div>
 							<div class="categories__text">
 								<strong class="categories__ttl">Элекроника и бытовая техника</strong>
 								<span class="categories__small">промокодов <span class="categories__small-qty">95</span></span>
 							</div>
 						</a>
 					</li><!-- /.categories__item -->
-				</ul>
+				</ul><!-- /.categories-list -->
 			</div><!-- /.categories -->
 			<div class="box-wrap">
 				<div class="box">
@@ -587,7 +694,7 @@
 								<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
 							</div><!-- /.form-row -->
 							<div class="form-row">
-								<button type="submit" class="btn subscribe-form__submit ripple">Подписаться</button>
+								<button type="submit" class="btn btn_wider-darker subscribe-form__btn ripple">Подписаться</button>
 							</div><!-- /.form-row -->
 						</fieldset>
 					</form>
@@ -706,10 +813,39 @@
 			</div><!-- /.site-footer__right -->
 		</div><!-- /.container -->
 	</footer><!-- /.site-footer -->
+	<div id="promo-details" class="promo-details">
+		<h3 class="ttl promo-details__ttl">Лучшие акции и предложения дня!<br>До 50% скидки!</h3>
+		<p class="promo-details__text">Описание условий промокода, нужно было вставить какой то текст для примера. Акции действует с 02.05.2015 до 02.06.2015. На нашем сайте можно найти только лучшие предложения по всем магазинам.</p>
+		<div class="promo-details__row">
+			<div class="form-row">
+				<input type="text" name="promopopup-code" value="Промокод не нужен" class="promo-details__code txt txt_center" disabled>
+			</div><!-- /.form-row -->
+			<div class="form-row">
+				<button class="promo-details__btn-darker btn btn_wider-darker ripple">Скопировать</button>
+			</div><!-- /.form-row -->
+		</div><!-- /.promo-details__row -->
+		<div class="promo-details__row promo-details__row_bg">
+			<a href="#" class="promo-details__btn btn ripple"><span class="promo-details__btn-text">Перейти в магазин</span></a>
+		</div><!-- /.promo-details__row-bg -->
+		<div class="promo-details__row promo-details__row_wide">
+			<form action="#">
+				<fieldset>
+					<div class="form-row">
+						<input type="text" name="promopopup-email" class="promo-details__email txt" placeholder="Введите Ваш E-mail и получите лучшие промокоды">
+						<div class="pseudo-border" role="presentation"></div><!-- /.pseudo-border -->
+					</div><!-- /.form-row -->
+					<div class="form-row">
+						<button type="submit" class="promo-details__btn-gray btn btn_wider-darker ripple">Получить</button>
+					</div><!-- /.form-row -->
+				</fieldset>
+			</form>
+		</div><!-- /.promo-details__row -->
+	</div><!-- /#promo-details.promo-details -->
 	<div class="overlay" role="presentation"></div><!-- /.overlay -->
 	<script src="js/libs/jquery-2.1.4.min.js"></script>
 	<!-- build:js -->
 	<script src="js/plugins/lazysizes.min.js"></script>
+	<script src="js/plugins/jquery.fancybox.min.js"></script>
 	<script src="js/scripts/inject-svg-file.js"></script>
 	<script src="js/scripts/accordion.js"></script>
 	<script src="js/scripts/script.js"></script>

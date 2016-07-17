@@ -1,5 +1,12 @@
-@mixin sprite($sprite-ico, $sprite: "%sprite") {
+@mixin sprite-wo-sizes($sprite-ico, $sprite: "%sprite") {
 	@extend #{$sprite};
+	@include sprite-position($sprite-ico);
+}
+
+@mixin sprite-with-sizes($sprite-ico, $sprite: "%sprite") {
+	@extend #{$sprite};
+	@include sprite-width($sprite-ico);
+	@include sprite-height($sprite-ico);
 	@include sprite-position($sprite-ico);
 }
 
@@ -83,8 +90,8 @@
 // 	}
 // }
 
-//					 FUNCS
-// =============================================
+// 		FUNC
+// ========================================
 // removes  units
 @function strip-unit($number) {
 	@if type-of($number) == "number" and not unitless($number) {

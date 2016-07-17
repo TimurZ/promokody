@@ -11,6 +11,22 @@ textarea {
 	&:not(:first-child) {
 		margin-top: 5px;
 	}
+
+	&_small {
+		@include respond-to(medium) {
+			max-width: 502px;
+		}
+	}
+
+	&_smaller {
+		@include respond-to(medium) {
+			max-width: 262px;
+		}
+	}
+
+	&_submit {
+		text-align: center;
+	}
 }
 
 .txt {
@@ -37,6 +53,16 @@ textarea {
 	}
 }
 
+.textarea {
+	@extend .txt;
+	height: 110px;
+	resize: none;
+
+	&_higher {
+		height: 130px;
+	}
+}
+
 // input, textarea pseudo border
 .pseudo-border {
 	height: 2px;
@@ -44,7 +70,7 @@ textarea {
 	right: 1px;
 	left: 1px;
 	bottom: 1px;
-	background: $green-darken;
+	background: $green-darker;
 
 	transform: scaleX(0);
 	transition: transform .3s;
@@ -68,12 +94,12 @@ textarea {
 				top: 0;
 				right: 0;
 				background: none;
-				border-bottom-color: $green-darken;
+				border-bottom-color: $green-darker;
 
 				&-svg {
 					width: 17px;
 					height: 17px;
-					fill: $green-darken;
+					fill: $green-darker;
 				}
 			}
 
@@ -94,7 +120,7 @@ textarea {
 		width: 37px;
 		height: 37px;
 		background: $green;
-		border-bottom: 2px solid $green-darken;
+		border-bottom: 2px solid $green-darker;
 
 		position: absolute;
 		top: 1px;
@@ -103,7 +129,7 @@ textarea {
 		@include respond-to(xlarge) {
 			&:hover {
 				background: $green-blue;
-				border-bottom-color: $green-blue-darken;
+				border-bottom-color: $green-blue-darker;
 				transition: background .3s, border-color .3s;
 			}
 		}
@@ -140,26 +166,66 @@ textarea {
 		}
 	}
 
-	&__submit {
-		@extend %button-reset;
-		width: 100%;
-		height: 38px;
-		line-height: 33px; // 1px === border + 4px === pseudo-border (box-shadow)
-		text-indent: -9px;
-		background: $green-blue;
+	&__btn {
+		padding-top: 10px;
+		padding-bottom: 13px;
+		height: auto;
+		line-height: 1;
 		border-color: $medium-gray;
 		border-width: 1px 1px 0;
-		border-radius: 0;
-		box-shadow: inset 0 -4px 0 $green-blue-darken;
-		position: relative;
+		box-shadow: inset 0 -4px 0 $green-blue-darker;
 
 		&:hover {
 			background: $green;
-			box-shadow: inset 0 -4px 0 $green-darken;
+			box-shadow: inset 0 -4px 0 $green-darker;
 		}
 
+		@include respond-to(large) {
+			width: 100%;
+		}
 		@include respond-to(xlarge) {
 			transition: background .3s, box-shadow .3s;
+		}
+	}
+}
+
+.reviews-form,
+.feedback-form {
+	.form-row {
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+
+		&_submit {
+			&:not(:first-child) {
+				margin-top: 15px;
+			}
+		}
+	}
+}
+
+.reviews-form {
+	padding: 20px;
+	border: 1px dashed $medium-gray;
+	background: #fff;
+
+	&_no-bg {
+		padding: 0;
+		border: none;
+		background: none;
+
+		.form-row_small {
+			@include respond-to(medium) {
+				max-width: 452px;
+			}
+		}
+	}
+}
+
+.feedback-form {
+	.form-row_small {
+		@include respond-to(medium) {
+			max-width: 452px;
 		}
 	}
 }

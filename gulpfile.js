@@ -119,13 +119,13 @@ gulp.task('js', ['clean'], function() {
 		.pipe(gulp.dest(path.build.js + 'libs'));
 
 	plugins
-		.pipe(concat(params.jsConcatNames.plugins))
 		.pipe(uglify())
+		.pipe(concat(params.jsConcatNames.plugins))
 		.pipe(gulp.dest(path.build.js));
 
 	scripts
-		.pipe(concat(params.jsConcatNames.scripts))
 		.pipe(uglify())
+		.pipe(concat(params.jsConcatNames.scripts))
 		.pipe(gulp.dest(path.build.js));
 });
 
