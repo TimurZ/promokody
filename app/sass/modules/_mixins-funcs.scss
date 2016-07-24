@@ -10,7 +10,18 @@
 	@include sprite-position($sprite-ico);
 }
 
-// MIN-WIDTH
+@mixin m-min($bp) {
+	@media screen and (min-width: $bp) {
+		@content;
+	}
+}
+
+@mixin m-max($bp) {
+	@media screen and (max-width: $bp) {
+		@content;
+	}
+}
+
 @mixin respond-to($name) {
 	$max-width-bp: false !default;
 

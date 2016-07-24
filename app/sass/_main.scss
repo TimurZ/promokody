@@ -422,7 +422,6 @@ a {
 		margin-bottom: gutter();
 
 		@include respond-to(medium) {
-			margin-top: 0;
 			margin-bottom: 10px;
 		}
 	}
@@ -452,9 +451,7 @@ a {
 
 		&.active {
 			.pagination__link {
-				@include respond-to(large) {
-					pointer-events: none;
-				}
+				pointer-events: none;
 			}
 		}
 	}
@@ -694,6 +691,7 @@ a {
 		max-width: 90%;
 		padding: 0 5px;
 		margin-bottom: 10px;
+		overflow: hidden;
 		font-size: 18px;
 		color: $medium-blue;
 		text-align: center;
@@ -2433,9 +2431,11 @@ a {
 
 		// [data-tooltip]
 		// change tooltip position of the first ico
-		&:first-child:after {
-			margin-left: 0;
-			left: 0;
+		@include m-max(map-get($breakpoints, large)) {
+			&:first-child:after {
+				margin-left: 0;
+				left: 0;
+			}
 		}
 	}
 

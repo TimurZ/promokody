@@ -99,7 +99,6 @@
 		updateFancybox: function() {
 			if (this.fancyboxOpened) {
 				$.fancybox.update();
-				console.log("updated");
 			}
 		}
 	};
